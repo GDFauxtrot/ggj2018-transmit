@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,5 +19,9 @@ public class InGameCameraManager : MonoBehaviour {
 
         if (playerToFollow != null)
             transform.position = new Vector3(playerToFollow.transform.position.x, playerToFollow.transform.position.y, transform.position.z);
+    }
+
+    internal void SetPixelEffectIntensity(float intensity) {
+        mipMapBias = intensity;
     }
 }
