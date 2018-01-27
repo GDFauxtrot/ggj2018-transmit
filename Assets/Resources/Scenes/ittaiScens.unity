@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 0}
-  speed: 0
+  speed: 1
 --- !u!50 &470787384
 Rigidbody2D:
   serializedVersion: 4
@@ -305,6 +305,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &760282539
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4412493941448864, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412493941448864, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412493941448864, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412493941448864, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412493941448864, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412493941448864, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412493941448864, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412493941448864, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1405805646
 GameObject:
   m_ObjectHideFlags: 0
