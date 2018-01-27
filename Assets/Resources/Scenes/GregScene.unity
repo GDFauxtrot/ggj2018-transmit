@@ -331,13 +331,16 @@ MonoBehaviour:
   player: {fileID: 1092078915}
   inGameCamera: {fileID: 201170529}
   spawnPoints: {fileID: 1604911300}
+  shooterPrefab: {fileID: 0}
+  brawlerPrefab: {fileID: 0}
   bossSpawned: 0
   score: 0
   bossSpawnScore: 50000
   spawnPointRange: 0.25
   pixelEffectIntensity: 5
-  pixelEffectTime: 10
+  pixelEffectTime: 5
   pixelEffectFadeTime: 1
+  lagEffectTime: 5
 --- !u!4 &322922509
 Transform:
   m_ObjectHideFlags: 0
@@ -612,8 +615,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1092078918}
   - component: {fileID: 1092078917}
-  - component: {fileID: 1092078916}
   - component: {fileID: 1092078919}
+  - component: {fileID: 1092078920}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -621,19 +624,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1092078916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1092078915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef851b399082f754d9bbdb4e91d93f7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  speed: 5
 --- !u!212 &1092078917
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -712,6 +702,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1092078920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1092078915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307d29ed3c5a0b84d88b4990f75d6b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  speed: 5
+  isInvincible: 0
+  bulletPrefab: {fileID: 0}
+  poolapi: {fileID: 0}
 --- !u!1 &1332484591
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,5 +9,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b0af68527dff314690593e07f1dc098, type: 3}
-  m_Name: bulletChandler
+  m_Name: bulletHandler
   m_EditorClassIdentifier: 
+  pool: {fileID: 0}

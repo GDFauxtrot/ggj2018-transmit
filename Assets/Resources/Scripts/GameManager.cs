@@ -84,7 +84,11 @@ public class GameManager : MonoBehaviour {
     }
 
     private void SetPlayerHealth(int health) {
+        player.GetComponent<Player>().SetHealth(health);
+    }
 
+    private void AddPlayerHealth(int addHealth) {
+        player.GetComponent<Player>().SetHealth(player.GetComponent<Player>().health + addHealth);
     }
 
     private void SetEnemyHealth(EnemyType type, int health) {
@@ -92,7 +96,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void SetPlayerSpeed(int speed) {
-
+        player.GetComponent<PlayerMovement>().speed = speed;
     }
 
     private void SetEnemySpeed(EnemyType type, float speed) {
@@ -100,19 +104,26 @@ public class GameManager : MonoBehaviour {
     }
 
     private void SetPlayerInvincible(float time) {
-
+        StartCoroutine(PlayerInvincibility(time));
     }
 
     private void UpgradePlayerBullets() {
 
     }
 
+    // double damage, half damage, etc
     private void PlayerDamageMultiplier(float multiplier, float time) {
 
     }
 
     private void EnemyDamageMultiplier(EnemyType type, float multiplier, float time) {
 
+    }
+
+    private IEnumerator PlayerInvincibility(float time) {
+        player.GetComponent<Player>().isInvincible = true;
+        yield return new WaitForSeconds(time);
+        player.GetComponent<Player>().isInvincible = false;
     }
 
     private IEnumerator LagEffect(float time) {
