@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-    public bool isGameRunning;
+    public GameObject player;
+
     public bool bossSpawned; // To prevent him from spawning again
 
     public int score;
@@ -19,8 +20,6 @@ public class GameManager : MonoBehaviour {
         foreach (Transform childTransform in GameObject.Find("spawnPointParent").transform) {
             enemySpawnPoints.Add(childTransform.gameObject);
         }
-
-        isGameRunning = true;
     }
     
     void Update () {
