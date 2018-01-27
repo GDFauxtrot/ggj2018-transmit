@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-    public GameObject player;
+    public GameObject player, inGameCamera;
+
+    public GameObject spawnPoints;
 
     public bool bossSpawned; // To prevent him from spawning again
 
@@ -14,10 +16,16 @@ public class GameManager : MonoBehaviour {
 
     public float spawnPointRange; // How far away can enemies spawn from the spawn points (spawning them exactly on would be boring)
 
-    private List<GameObject> enemySpawnPoints; // This is all we need, as far as I'm concerned
+    public float pixelEffectIntensity, pixelEffectTime, pixelEffectFadeTime;
+
+    List<GameObject> enemySpawnPoints; // This is all we need, as far as I'm concerned
+
+    InGameCameraManager inGameCamManager;
 
     void Start () {
-        foreach (Transform childTransform in GameObject.Find("spawnPointParent").transform) {
+        inGameCamManager = inGameCamera.GetComponent<InGameCameraManager>();
+
+        foreach (Transform childTransform in spawnPoints.transform) {
             enemySpawnPoints.Add(childTransform.gameObject);
         }
     }
@@ -46,5 +54,43 @@ public class GameManager : MonoBehaviour {
 
     public void SpawnBoss() {
         bossSpawned = true;
+    }
+
+    public void SendCommand(string message) {
+        if (message == "" || message == null)
+            return;
+
+        string[] messageSplit = message.Split();
+
+        switch (messageSplit[0]) {
+            case "spawn":
+                break; // check for messageSplit[1] -- spawn what?
+            case "summon":
+                break; // same as spawn
+            case "heal":
+                break; // heal the player
+            case "distort":
+                StartCoroutine(PixelEffect(pixelEffectIntensity, pixelEffectTime, pixelEffectFadeTime));
+                break;
+        }
+    }
+
+    private IEnumerator PixelEffect(float intensity, float time, float fadeTime) {
+        float timeStep = 0f;
+
+        while (timeStep < 1f) {
+            inGameCamManager.SetPixelEffectIntensity(Mathf.Lerp(0f, intensity, timeStep));
+            yield return new WaitForSeconds(Time.deltaTime);
+            timeStep += Time.deltaTime * (1f/fadeTime);
+        }
+        timeStep = 1f;
+        inGameCamManager.SetPixelEffectIntensity(intensity);
+        yield return new WaitForSeconds(time);
+        while (timeStep > 0f) {
+            inGameCamManager.SetPixelEffectIntensity(Mathf.Lerp(0f, intensity, timeStep));
+            yield return new WaitForSeconds(Time.deltaTime);
+            timeStep -= Time.deltaTime * (1f/fadeTime);
+        }
+        inGameCamManager.SetPixelEffectIntensity(0);
     }
 }
