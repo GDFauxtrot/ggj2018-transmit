@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	public BulletPoolScriptable poolapi;
 
+
 	void Awake()
 	{
 		reticle = transform.GetChild(0).GetComponent<Transform>();
@@ -31,13 +32,9 @@ public class PlayerMovement : MonoBehaviour {
 		Vector2 movement = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
 
         float mag = movement.magnitude;
-        
-        if (mag < 1f) {
-            movement.Normalize();
+        movement.Normalize();
+        if (mag < 1f) 
             movement = new Vector2(movement.x * mag, movement.y * mag);
-        } else {
-            movement.Normalize();
-        }
         
         rb2D.MovePosition(rb2D.position+movement*speed*Time.deltaTime);
 		// Mathf.Atan2 returns the tangent line to the two float values given, and then we multiple it to get it as an angle.
