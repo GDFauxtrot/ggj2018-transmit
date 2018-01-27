@@ -28,9 +28,18 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate() {
 		Vector2 movement = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
-		
-        movement.Normalize();
-		rb2D.MovePosition(rb2D.position+movement*speed*Time.deltaTime);
+
+        float mag = movement.magnitude;
+        
+        if (mag < 1f) {
+            movement.Normalize();
+            movement = new Vector2(movement.x * mag, movement.y * mag);
+        } else {
+            movement.Normalize();
+        }
+        
+        Debug.Log(movement.magnitude);
+        rb2D.MovePosition(rb2D.position+movement*speed*Time.deltaTime);
 		// Mathf.Atan2 returns the tangent line to the two float values given, and then we multiple it to get it as an angle.
         reticle.eulerAngles = new Vector3(0, 0,Mathf.Atan2(Input.GetAxis("RstickVertical"), Input.GetAxis("RstickHorizontal")) * 180 / Mathf.PI);
     } 
