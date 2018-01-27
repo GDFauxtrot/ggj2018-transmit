@@ -7,6 +7,7 @@ public class bullet : MonoBehaviour {
 	public float speed;
 	// Update is called once per frame
 	void Update () {
+		Debug.Log(transform.rotation);
 		Vector3 moving=new Vector3(speed * Time.deltaTime,0,0);
 		transform.position+= (moving);
 	}

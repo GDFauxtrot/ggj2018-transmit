@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	// Use this for initialization
+	public GameObject bullet;
 	private Rigidbody2D rb2D;
-	public Transform reticle;
+	private Transform reticle;
 	public float speed;
 
 
@@ -17,10 +18,18 @@ public class PlayerMovement : MonoBehaviour {
 	} 
 
 	
+	void Update()
+	{
+		if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(bullet, reticle.position + (reticle.right/5), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z));
+        }
+	}
 	// Update is called once per frame
 	void FixedUpdate() {
 		Vector2 movement = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
-
+		Debug.Log(Input.GetButtonDown("Fire1"));
+		
         movement.Normalize();
 		rb2D.MovePosition(rb2D.position+movement*speed*Time.deltaTime);
 		// Mathf.Atan2 returns the tangent line to the two float values given, and then we multiple it to get it as an angle.
