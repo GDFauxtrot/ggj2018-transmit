@@ -42,12 +42,14 @@ public class Chat_Controller : MonoBehaviour {
     //This will be the list of commands and the functions they call for both the player and the AI agents
     private CommandData[] commands = new CommandData[] { new CommandData("!SpawnRaptors", "SpawnRaptors"), new CommandData("!SlowDownPlayer", "SlowPlayer")};
 
-    private string[] crap = new string[] { "You Suck!", "Best Streamer Ever!", "I Love you player 1", "uu n00b l0l", "I wish people respected you more", "I hate this game play something else", "I could play this so much better than you can", "reeeeeeeeeeeeee" };
+    private string[] useless_messages = new string[] { "You Suck!", "Best Streamer Ever!", "I Love you player 1", "uu n00b l0l", "I wish people respected you more", "I hate this game play something else", "I could play this so much better than you can", "reeeeeeeeeeeeee",
+    "<message deleted>"};
     private string[] colors = new string[] { "aqua", "blue", "brown", "red", "yellow", "navy", "orange", "purple", "lime", "green", "magenta", "maroon" };
 
     // Use this for initialization
     void Start()
     {
+        player_input.Select();
         StartCoroutine(SpamChat());
     }
 
@@ -70,7 +72,7 @@ public class Chat_Controller : MonoBehaviour {
             }
             else
                 //Sends the random messages, also makes them somtimes upper case to mimic the real internet
-                Add_Message("<color=" + colors[Random.Range(0, colors.Length)] + ">" + names[Random.Range(0, names.Length)] + "</color>" + ": " + (rand > 80 ? crap[Random.Range(0, crap.Length)].ToUpper() : crap[Random.Range(0, crap.Length)]), false);
+                Add_Message("<color=" + colors[Random.Range(0, colors.Length)] + ">" + names[Random.Range(0, names.Length)] + "</color>" + ": " + (rand > 80 ? useless_messages[Random.Range(0, useless_messages.Length)].ToUpper() : useless_messages[Random.Range(0, useless_messages.Length)]), false);
         }
     }
 
@@ -138,7 +140,8 @@ public class Chat_Controller : MonoBehaviour {
         {
             if (player_input.text[player_input.text.Length - 1] == '\n')
             {
-                Add_Message("<color=white>" + "Player2"  + ": " + player_input.text.Substring(0, player_input.text.Length - 1) + "</color>", true);
+                if(player_input.text.Length - 1 > 0)
+                    Add_Message("<color=white>" + "Player2"  + ": " + player_input.text.Substring(0, player_input.text.Length - 1) + "</color>", true);
                 player_input.text = "";
             }
             else if(player_input.text[player_input.text.Length-1] == '\t')
