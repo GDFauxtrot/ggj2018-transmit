@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
 
     public float spawnPointRange; // How far away can enemies spawn from the spawn points (spawning them exactly on would be boring)
 
+    public float pixelEffectIntensity, pixelEffectTime, pixelEffectFadeTime;
+
     List<GameObject> enemySpawnPoints; // This is all we need, as far as I'm concerned
 
     InGameCameraManager inGameCamManager;
@@ -68,7 +70,7 @@ public class GameManager : MonoBehaviour {
             case "heal":
                 break; // heal the player
             case "distort":
-                StartCoroutine(PixelEffect(5, 10, 1f));
+                StartCoroutine(PixelEffect(pixelEffectIntensity, pixelEffectTime, pixelEffectFadeTime));
                 break;
         }
     }
@@ -82,7 +84,7 @@ public class GameManager : MonoBehaviour {
             timeStep += Time.deltaTime * (1f/fadeTime);
         }
         timeStep = 1f;
-        inGameCamManager.SetPixelEffectIntensity(1f);
+        inGameCamManager.SetPixelEffectIntensity(intensity);
         yield return new WaitForSeconds(time);
         while (timeStep > 0f) {
             inGameCamManager.SetPixelEffectIntensity(Mathf.Lerp(0f, intensity, timeStep));
