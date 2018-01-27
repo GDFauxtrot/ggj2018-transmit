@@ -55,11 +55,24 @@ public class Chat_Controller : MonoBehaviour {
 
     private IEnumerator SpamChat()
     {
+        float minWaitAtLowScore = 20.0f;
+        float maxWaitAtLowScore = 30.0f;
+
+        float minWaitAtHighScore = 0.5f;
+        float maxWaitAtHighScore = 1.0f;
+
+        //This is where you set the highest score the characters typing should increase to
+        float highScore = 10000.0f;
         while (true)
         {
+            //float ratio = Mathf.Clamp(gm.score / highScore, 0.0f, 1.0f);
+
+            //float minWait = Mathf.Lerp(minWaitAtLowScore, minWaitAtHighScore, ratio);
+            //float maxWait = Mathf.Lerp(maxWaitAtLowScore, maxWaitAtHighScore, ratio);
+
             //Should change the wait depending on the score of the game, higher score = less wait between messages
-            yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
-            //yield return new WaitForSeconds(Random.Range(1, 2f));
+            yield return new WaitForSeconds(Random.Range(0.5f, 1f));
+            //yield return new WaitForSeconds(Random.Range(minWait, maxWait));
 
 
             int rand = Random.Range(0, 100);
