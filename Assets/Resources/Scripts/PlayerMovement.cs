@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour {
 	private Rigidbody2D rb2D;
 	private Transform reticle;
 	public float speed;
-
+	
+	public BulletPoolScriptable poolapi;
 
 	void Awake()
 	{
@@ -22,7 +23,7 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(bullet, reticle.position + (reticle.right/5), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z));
+			poolapi.request(reticle.position + (reticle.right / 5), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z));
         }
 	}
 	// Update is called once per frame
@@ -38,7 +39,6 @@ public class PlayerMovement : MonoBehaviour {
             movement.Normalize();
         }
         
-        Debug.Log(movement.magnitude);
         rb2D.MovePosition(rb2D.position+movement*speed*Time.deltaTime);
 		// Mathf.Atan2 returns the tangent line to the two float values given, and then we multiple it to get it as an angle.
         reticle.eulerAngles = new Vector3(0, 0,Mathf.Atan2(Input.GetAxis("RstickVertical"), Input.GetAxis("RstickHorizontal")) * 180 / Mathf.PI);
