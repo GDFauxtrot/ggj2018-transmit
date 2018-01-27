@@ -168,8 +168,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 470787386}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &313531817
 SpriteRenderer:
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef851b399082f754d9bbdb4e91d93f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reticle: {fileID: 0}
+  bullet: {fileID: 1534005795848046, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
   speed: 1
 --- !u!50 &470787384
 Rigidbody2D:
@@ -302,6 +302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 236257956}
+  - {fileID: 313531816}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -342,7 +343,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4412493941448864, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
