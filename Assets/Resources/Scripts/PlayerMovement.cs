@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate() {
 		Vector2 movement = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
-		Debug.Log(Input.GetButtonDown("Fire1"));
 		
         movement.Normalize();
 		rb2D.MovePosition(rb2D.position+movement*speed*Time.deltaTime);
