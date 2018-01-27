@@ -13,7 +13,6 @@ public class Player : MonoBehaviour {
 
     public bool isInvincible; // Just set this and let Update take care of the rest
 
-    public GameObject bulletPrefab;
     private Rigidbody2D rb2D;
     private Transform reticle;
 
