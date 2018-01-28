@@ -37,8 +37,17 @@ public class Player : MonoBehaviour {
 
     void Update () {
         if (Input.GetButtonDown("Fire1")) {
-            poolapi.request(reticle.position + (reticle.right), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z),false);
-            shoot_particles.transform.rotation = Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z);
+            poolapi.request(shoot_particles.transform.position, Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z),false);
+            if (sr.flipX)
+            {
+                shoot_particles.transform.rotation = Quaternion.Euler(new Vector3(0, 180, -25f));
+                shoot_particles.transform.localPosition = new Vector3(-0.6f, 2.1f, 0);
+            }
+            else
+            {
+                shoot_particles.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -25f));
+                shoot_particles.transform.localPosition = new Vector3(0.6f, 2.1f, 0);
+            }
             shoot_particles.GetComponent<ParticleSystem>().Play();
             shoot_sound.pitch = Random.Range(0.9f, 1.1f);
             shoot_sound.Play();
@@ -83,18 +92,22 @@ public class Player : MonoBehaviour {
 
     void FixedUpdate() {
         Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        float horiz = Input.GetAxis("Horizontal");
-        if (horiz != 0)
+        if (movement.x != 0 || movement.y != 0)
         {
             anim.SetBool("Running", true);
-            if (horiz > 0.2f)
-                sr.flipX = false;
-            else if (horiz < -0.2f)
-                sr.flipX = true;
         }
         else
             anim.SetBool("Running", false);
 
+
+        float right_or_left = Input.GetAxis("RstickHorizontal");
+        if (right_or_left != 0)
+        {
+            if (right_or_left < -0.2f)
+                sr.flipX = true;
+            else if (right_or_left > 0.2f)
+                sr.flipX = false;
+        }
 
 
         float mag = movement.magnitude;
