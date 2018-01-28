@@ -55,8 +55,8 @@ public class Player : MonoBehaviour {
         
         rb2D.MovePosition(rb2D.position+movement*speed*Time.deltaTime);
         // Mathf.Atan2 returns the tangent line to the two float values given, and then we multiple it to get it as an angle.
-        
-        reticle.eulerAngles = new Vector3(0, 0, Mathf.Atan2(Input.GetAxis("RstickVertical"), Input.GetAxis("RstickHorizontal")) * 180 / Mathf.PI);
+        if(new Vector2(Input.GetAxis("RstickVertical"), Input.GetAxis("RstickHorizontal"))!=new Vector2(0,0))
+            reticle.eulerAngles = new Vector3(0, 0, Mathf.Atan2(Input.GetAxis("RstickVertical"), Input.GetAxis("RstickHorizontal")) * 180 / Mathf.PI);
 
         Vector3 prevPosition = transform.position;
         Vector3 nextPosition = (rb2D.position+movement*speed*Time.deltaTime);
