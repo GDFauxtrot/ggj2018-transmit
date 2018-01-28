@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4699096773063904}
   - component: {fileID: 198821133369588304}
   - component: {fileID: 199796437958901602}
+  - component: {fileID: 114004210014191350}
   m_Layer: 0
   m_Name: PlayerBulletExplosion
   m_TagString: Untagged
@@ -41,6 +42,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114004210014191350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1435931553644992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69e2ac2693ac674baa13fd0b6cee4c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198821133369588304
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -14,10 +14,18 @@ public class DumbEnemyAI : MonoBehaviour {
     public float moveDelta = .05f;
     [Tooltip("How much damage the player will take when the enemy hits them.")]
     public int damage = 5;
+    public float reloadTime = 2;
+
+    private AudioSource audio_player;
+    public AudioClip[] sounds;
+
+    private bool can_damage = true;
 
     void Start() {
+        audio_player = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         enemyRB = transform.GetComponent<Rigidbody2D>();
+        StartCoroutine(Make_Sounds());
     }
 
 	// Update is called once per frame
@@ -26,19 +34,19 @@ public class DumbEnemyAI : MonoBehaviour {
         checkIfDead();              // Checks if health has fallen below 0, and destroys the GameObject.
 	}
 
-    // Move this into a Brawler script.
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        // Please make sure the player is tagged as "Player"!!!
-        if (other.tag == "Player")
-        {
-            if (playerScript == null)
-            {
-                playerScript = player.GetComponent<Player>();
-            }
-            playerScript.SetHealth(playerScript.health - damage);
-        }
-    }
+    //// Move this into a Brawler script.
+    //public void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    // Please make sure the player is tagged as "Player"!!!
+    //    if (other.tag == "Player")
+    //    {
+    //        if (playerScript == null)
+    //        {
+    //            playerScript = player.GetComponent<Player>();
+    //        }
+    //        playerScript.TakeDamage(damage);
+    //    }
+    //}
 
     //Private Functions: Nothing else needs to call these, so im making them private.
     private void move() {
@@ -50,8 +58,37 @@ public class DumbEnemyAI : MonoBehaviour {
 
     private void checkIfDead() {
         if (enemyHealth <= 0) {
+            PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 50);
             Instantiate(death_explosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
+    }
+
+    private IEnumerator Make_Sounds()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            audio_player.clip = sounds[Random.Range(0, sounds.Length)];
+            audio_player.Play();
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D c)
+    {
+        if(c.gameObject.CompareTag("Player"))
+        {
+            if (can_damage)
+                StartCoroutine(Damage_Player(c.gameObject));
+
+        }
+    }
+
+    private IEnumerator Damage_Player(GameObject player)
+    {
+        can_damage = false;
+        player.GetComponent<Player>().TakeDamage(damage);
+        yield return new WaitForSeconds(reloadTime);
+        can_damage = true;
     }
 }

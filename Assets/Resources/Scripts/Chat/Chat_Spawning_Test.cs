@@ -7,7 +7,6 @@ public class Chat_Spawning_Test : MonoBehaviour {
 
     public GameObject text_test;
     public InputField player_input;
-    private int count = 0;
 
     //This is a test max to be the cutoff on the top
     private GameObject[] text_list = new GameObject[18];
