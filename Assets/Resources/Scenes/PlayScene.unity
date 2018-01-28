@@ -629,6 +629,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2066836, y: 1.8393631}
   m_EdgeRadius: 0
+--- !u!212 &563735065 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212571214992416074, guid: 2c684e2bdfd45ed4fb8177701187534c,
+    type: 2}
+  m_PrefabInternal: {fileID: 724211413}
 --- !u!1 &593199665
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,7 +746,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 212907451235001896, guid: 2c684e2bdfd45ed4fb8177701187534c,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8bf900d1a81e83345bedd092f7199294,
+        type: 3}
+    - target: {fileID: 212571214992416074, guid: 2c684e2bdfd45ed4fb8177701187534c,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cd416232c6def614ea6ba2d4da5c0ded,
+        type: 3}
+    - target: {fileID: 212571214992416074, guid: 2c684e2bdfd45ed4fb8177701187534c,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114941515791856228, guid: 2c684e2bdfd45ed4fb8177701187534c,
+        type: 2}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 563735065}
+    m_RemovedComponents:
+    - {fileID: 212907451235001896, guid: 2c684e2bdfd45ed4fb8177701187534c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2c684e2bdfd45ed4fb8177701187534c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &863524207
@@ -1037,6 +1065,23 @@ GameObject:
   m_PrefabParentObject: {fileID: 1366774499339450, guid: 2c684e2bdfd45ed4fb8177701187534c,
     type: 2}
   m_PrefabInternal: {fileID: 724211413}
+--- !u!95 &1092078916
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1092078915}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83668804dfc9a2846b57f2e26724babb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1323390954
 Prefab:
   m_ObjectHideFlags: 0
