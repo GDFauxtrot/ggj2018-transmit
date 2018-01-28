@@ -24,7 +24,12 @@ public class Player : MonoBehaviour {
 
     GameObject cameraFollow;
 
+    private Animator anim;
+    public SpriteRenderer sr;
+
     void Awake() {
+        anim = GetComponent<Animator>();
+        print(sr.gameObject);
         reticle = transform.GetChild(0).GetComponent<Transform>();
         rb2D = GetComponent<Rigidbody2D>();
         cameraFollow = transform.GetChild(1).gameObject;
@@ -79,6 +84,19 @@ public class Player : MonoBehaviour {
 
     void FixedUpdate() {
         Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        float horiz = Input.GetAxis("Horizontal");
+        if (horiz != 0)
+        {
+            anim.SetBool("Running", true);
+            if (horiz > 0.2f)
+                sr.flipX = false;
+            else if (horiz < -0.2f)
+                sr.flipX = true;
+        }
+        else
+            anim.SetBool("Running", false);
+
+
 
         float mag = movement.magnitude;
         movement.Normalize();
