@@ -65,7 +65,7 @@ public class Chat_Controller : MonoBehaviour
         new CommandData("!StreamQualityDown", "pixellate"), new CommandData("!SpawnShooter", "spawnshooter"), new CommandData("!PlayerDamageUp", "playerdamup"), new CommandData("!PlayerSpeedDown", "playerslow"),
         new CommandData("!LagPlayer", "lag"), new CommandData("!BulletUpgrade", "bulletup"), new CommandData("!SpawnTrap", "trap"), new CommandData("!Invincibility", "invince"), new CommandData("!SpawnBoss", "boss")};
 
-    private string[] useless_messages = new string[] { "You Suck!", "Best Streamer Ever!", "I Love you player1", "uu n00b l0l", "I wish people respected you more", "I hate this game play something else", "I could play this so much better than you can", "reeeeeeeeeeeeee",
+    private string[] useless_messages = new string[] { "You Suck!", "Best Streamer Ever!", "I Love you", "uu n00b l0l", "I wish people respected you more", "I hate this game play something else", "I could play this so much better than you can", "reeeeeeeeeeeeee",
     "<message deleted>"};
     private string[] colors = new string[] { "aqua", "blue", "brown", "red", "yellow", "navy", "orange", "purple", "lime", "green", "magenta", "maroon" };
 
@@ -101,7 +101,11 @@ public class Chat_Controller : MonoBehaviour
             int rand = Random.Range(0, 100);
             if (rand < randomChanceOfCommand)
             {
-                CommandData com = commands[Random.Range(0, Mathf.Min(current_max_command_index+1, 5))];
+                CommandData com;
+                if (rand >= 0 && rand < 25)
+                    com = commands[0];
+                else
+                    com = commands[Random.Range(0, Mathf.Min(current_max_command_index + 1, 5))];
                 Add_Message("<color=" + colors[Random.Range(0, colors.Length)] + ">" + names[Random.Range(0, names.Length)] + "</color>" + ": " + com.message, false);
                 gm.SendCommand(com.function_name);
                 //Call the function in the Game Manager using call_func(commands.function_name)***********************************************************************
@@ -115,7 +119,7 @@ public class Chat_Controller : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.Tab))
+        if (Input.GetKey(KeyCode.Tab) && PlayerPrefs.GetString("Streamer") != "")
             command_panel.SetActive(true);
         else
             command_panel.SetActive(false);
@@ -181,7 +185,7 @@ public class Chat_Controller : MonoBehaviour
             if (player_input.text[player_input.text.Length - 1] == '\n')
             {
                 if (player_input.text.Length - 1 > 0)
-                    Add_Message("<color=white>" + "Player2" + ": " + player_input.text.Substring(0, player_input.text.Length - 1) + "</color>", true);
+                    Add_Message("<color=white>" + PlayerPrefs.GetString("Chat") + ": " + player_input.text.Substring(0, player_input.text.Length - 1) + "</color>", true);
                 for(int i = 0; i < commands.Length; ++i)
                 {
                     if (player_input.text.Substring(0, player_input.text.Length - 1) == commands[i].message)
