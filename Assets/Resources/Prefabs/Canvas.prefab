@@ -426,7 +426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1986868262651600
 GameObject:
   m_ObjectHideFlags: 1
@@ -524,6 +524,7 @@ MonoBehaviour:
   minViewers: 0
   maxViewers: 0
   randomChanceOfCommand: 25
+  level_step: 1000
 --- !u!114 &114194999606753426
 MonoBehaviour:
   m_ObjectHideFlags: 1

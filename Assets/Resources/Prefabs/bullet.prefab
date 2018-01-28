@@ -36,8 +36,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4412493941448864}
   - component: {fileID: 114052908493835170}
-  - component: {fileID: 61039776311522762}
   - component: {fileID: 50738977189784672}
+  - component: {fileID: 58533958640873010}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1534005795848046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.84, z: 0}
+  m_LocalPosition: {x: 101.33513, y: 99.74094, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4420340894912946}
@@ -92,8 +92,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61039776311522762
-BoxCollider2D:
+--- !u!58 &58533958640873010
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -105,18 +105,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.25
 --- !u!114 &114052908493835170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,6 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletScript: {fileID: 11400000, guid: 0a625d5e5753c4f4a970c31961c79e90, type: 2}
   pool: {fileID: 0}
+  player_bullet_explosion: {fileID: 1435931553644992, guid: 84ac2fb8845007a4c946b6322eb238f8,
+    type: 2}
 --- !u!212 &212800928362661764
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -165,7 +157,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.24137926, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

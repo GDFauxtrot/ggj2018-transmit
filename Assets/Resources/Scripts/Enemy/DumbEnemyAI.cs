@@ -7,6 +7,7 @@ public class DumbEnemyAI : MonoBehaviour {
     private GameObject player;
     private Player playerScript;
     private Rigidbody2D enemyRB;
+    public GameObject death_explosion;
 
     public int enemyHealth = 3;
     [Tooltip("Determines how fast the enemy will move towards the player. Values: [0-1], 0 means no movement at all, and 1 means teleport to player.")]
@@ -14,9 +15,14 @@ public class DumbEnemyAI : MonoBehaviour {
     [Tooltip("How much damage the player will take when the enemy hits them.")]
     public int damage = 5;
 
+    private AudioSource audio_player;
+    public AudioClip[] sounds; 
+
     void Start() {
+        audio_player = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         enemyRB = transform.GetComponent<Rigidbody2D>();
+        StartCoroutine(Make_Sounds());
     }
 
 	// Update is called once per frame
@@ -48,6 +54,19 @@ public class DumbEnemyAI : MonoBehaviour {
     }
 
     private void checkIfDead() {
-        if (enemyHealth <= 0) { Destroy(this.gameObject); }
+        if (enemyHealth <= 0) {
+            Instantiate(death_explosion, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+    }
+
+    private IEnumerator Make_Sounds()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            audio_player.clip = sounds[Random.Range(0, sounds.Length)];
+            audio_player.Play();
+        }
     }
 }

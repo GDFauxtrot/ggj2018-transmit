@@ -17,8 +17,10 @@ public class Player : MonoBehaviour {
     private Transform reticle;
 
     public BulletPoolScriptable poolapi;
+    public GameObject shoot_particles;
 
     public float cameraFollowStep;
+    private AudioSource shoot_sound;
 
     GameObject cameraFollow;
 
@@ -26,11 +28,26 @@ public class Player : MonoBehaviour {
         reticle = transform.GetChild(0).GetComponent<Transform>();
         rb2D = GetComponent<Rigidbody2D>();
         cameraFollow = transform.GetChild(1).gameObject;
+        shoot_sound = GetComponent<AudioSource>();
     }
 
     void Update () {
         if (Input.GetButtonDown("Fire1")) {
             poolapi.request(reticle.position + (reticle.right), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z),false);
+            shoot_particles.transform.rotation = Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z);
+            shoot_particles.GetComponent<ParticleSystem>().Play();
+            shoot_sound.pitch = Random.Range(0.9f, 1.1f);
+            shoot_sound.Play();
+            StartCoroutine(ScreenShake());
+        }
+    }
+
+    private IEnumerator ScreenShake()
+    {
+        for(int i = 0; i < 2; ++i)
+        {
+            cameraFollow.transform.position += new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), 0);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
@@ -55,8 +72,8 @@ public class Player : MonoBehaviour {
         
         rb2D.MovePosition(rb2D.position+movement*speed*Time.deltaTime);
         // Mathf.Atan2 returns the tangent line to the two float values given, and then we multiple it to get it as an angle.
-        
-        reticle.eulerAngles = new Vector3(0, 0, Mathf.Atan2(Input.GetAxis("RstickVertical"), Input.GetAxis("RstickHorizontal")) * 180 / Mathf.PI);
+        if(new Vector2(Input.GetAxis("RstickVertical"), Input.GetAxis("RstickHorizontal"))!=new Vector2(0,0))
+            reticle.eulerAngles = new Vector3(0, 0, Mathf.Atan2(Input.GetAxis("RstickVertical"), Input.GetAxis("RstickHorizontal")) * 180 / Mathf.PI);
 
         Vector3 prevPosition = transform.position;
         Vector3 nextPosition = (rb2D.position+movement*speed*Time.deltaTime);
