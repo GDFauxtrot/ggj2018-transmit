@@ -67,6 +67,14 @@ public class bullet : MonoBehaviour {
             RET();
 		}
 
+        if(other.tag == "Untagged")
+        {
+            if(tagTarget == "Enemy")
+                Instantiate(player_bullet_explosion, transform.position, Quaternion.identity);
+            CancelInvoke();
+            RET();
+        }
+
 	}
 	
 	public void ReturnToPool(bool enemy)
