@@ -15,9 +15,14 @@ public class DumbEnemyAI : MonoBehaviour {
     [Tooltip("How much damage the player will take when the enemy hits them.")]
     public int damage = 5;
 
+    private AudioSource audio_player;
+    public AudioClip[] sounds; 
+
     void Start() {
+        audio_player = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         enemyRB = transform.GetComponent<Rigidbody2D>();
+        StartCoroutine(Make_Sounds());
     }
 
 	// Update is called once per frame
@@ -52,6 +57,16 @@ public class DumbEnemyAI : MonoBehaviour {
         if (enemyHealth <= 0) {
             Instantiate(death_explosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+        }
+    }
+
+    private IEnumerator Make_Sounds()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            audio_player.clip = sounds[Random.Range(0, sounds.Length)];
+            audio_player.Play();
         }
     }
 }
