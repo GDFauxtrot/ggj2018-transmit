@@ -21,7 +21,7 @@ public class DumbEnemyAI : MonoBehaviour {
 
     private Animator anim;
 
-    private bool can_damage = true;
+    public bool can_damage = true, animate = true, boss = false;
 
     public SpriteRenderer sr;
 
@@ -59,36 +59,40 @@ public class DumbEnemyAI : MonoBehaviour {
         Vector2 enemyPos = new Vector2(transform.position.x, transform.position.y);
 
 
-        Vector2 diff = (playerPos - enemyPos).normalized;
-        anim.SetInteger("Direction", -1);
-        if(Mathf.Abs(diff.x) > Mathf.Abs(diff.y))
+        if(animate)
         {
-            //Moving left and right
-            if (diff.x >= 0)
+            Vector2 diff = (playerPos - enemyPos).normalized;
+            anim.SetInteger("Direction", -1);
+            if (Mathf.Abs(diff.x) > Mathf.Abs(diff.y))
             {
-                anim.SetInteger("Direction", 0);
-                sr.flipX = true;
+                //Moving left and right
+                if (diff.x >= 0)
+                {
+                    anim.SetInteger("Direction", 0);
+                    sr.flipX = true;
+                }
+                else
+                {
+                    anim.SetInteger("Direction", 2);
+                    sr.flipX = false;
+                }
             }
             else
             {
-                anim.SetInteger("Direction", 2);
-                sr.flipX = false;
+                //Moving up and down
+                if (diff.y >= 0)
+                    anim.SetInteger("Direction", 1);
+                else
+                    anim.SetInteger("Direction", 3);
             }
         }
-        else
-        {
-            //Moving up and down
-            if (diff.y >= 0)
-                anim.SetInteger("Direction", 1);
-            else
-                anim.SetInteger("Direction", 3);
-        }
+
 
         enemyRB.MovePosition(Vector2.MoveTowards(enemyPos, playerPos, moveDelta));
     }
 
     private void checkIfDead() {
-        if (enemyHealth <= 0) {
+        if (enemyHealth <= 0 && !boss) {
             PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 50);
             Instantiate(death_explosion, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
             Destroy(this.gameObject);
@@ -101,6 +105,7 @@ public class DumbEnemyAI : MonoBehaviour {
         {
             yield return new WaitForSeconds(Random.Range(2f, 5f));
             audio_player.clip = sounds[Random.Range(0, sounds.Length)];
+            audio_player.pitch = Random.Range(0.9f, 1.1f);
             audio_player.Play();
         }
     }

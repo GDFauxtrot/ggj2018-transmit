@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1994367499703456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 98.6, y: 100.7, z: 0}
+  m_LocalPosition: {x: 124.33634, y: 76.89768, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4891445607321730}
@@ -256,6 +256,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2bde4cc3c209410429a0f413a2b47f0b, type: 3}
   - {fileID: 8300000, guid: 0f970a411edacde43912beb43e0932f4, type: 3}
   - {fileID: 8300000, guid: 88da109896e931f41a694391edd68d17, type: 3}
+  can_damage: 0
+  animate: 1
+  boss: 0
   sr: {fileID: 212841374312397840}
 --- !u!114 &114716784108333324
 MonoBehaviour:

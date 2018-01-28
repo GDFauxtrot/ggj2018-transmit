@@ -18,12 +18,12 @@ public class BulletPoolScriptable : ScriptableObject {
 			size=0;
 	}
 
-	public void request(Vector3 requesty, Quaternion angle, bool enemy)// used to request and send
+	public void request(Vector3 requesty, Quaternion angle, string shooter_type)// used to request and send
 	{
 		var child = pool.transform.GetChild(0);
 		child.transform.position=requesty;
 		child.transform.rotation=angle;
 		child.gameObject.SetActive(true);
-		child.gameObject.GetComponent<bullet>().ReturnToPool(enemy);
+		child.gameObject.GetComponent<bullet>().ReturnToPool(shooter_type);
 	}
 }
