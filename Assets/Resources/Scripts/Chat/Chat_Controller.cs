@@ -70,6 +70,10 @@ public class Chat_Controller : MonoBehaviour
     private string[] colors = new string[] { "aqua", "blue", "brown", "red", "yellow", "navy", "orange", "purple", "lime", "green", "magenta", "maroon" };
 
     private int[] max_command_index = new int[] { 1, 3, 5, 8, 11, 12, 13 };
+    int current_max_command_index = 1;
+
+    //This is the value that represents how many points it takes to move into the next bracket of commands as shown above
+    public int level_step;
 
     // Use this for initialization
     void Start()
@@ -97,7 +101,7 @@ public class Chat_Controller : MonoBehaviour
             int rand = Random.Range(0, 100);
             if (rand < randomChanceOfCommand)
             {
-                CommandData com = commands[Random.Range(0, commands.Length)];
+                CommandData com = commands[Random.Range(0, Mathf.Min(current_max_command_index+1, 5))];
                 Add_Message("<color=" + colors[Random.Range(0, colors.Length)] + ">" + names[Random.Range(0, names.Length)] + "</color>" + ": " + com.message, false);
                 gm.SendCommand(com.function_name);
                 //Call the function in the Game Manager using call_func(commands.function_name)***********************************************************************
@@ -117,6 +121,8 @@ public class Chat_Controller : MonoBehaviour
             command_panel.SetActive(false);
 
         current_viewers.text = Mathf.Lerp(minViewers, maxViewers, gm.score / highScore).ToString();
+
+        current_max_command_index = max_command_index[Mathf.Min(((int)gm.score) / level_step, max_command_index.Length-1)];
 
         for (int i = 0; i < text_list.Length; ++i)
         {

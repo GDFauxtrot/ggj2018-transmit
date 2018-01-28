@@ -8,7 +8,7 @@ public enum EnemyType { SHOOTER, BRAWLER, BOSS };
 public class GameManager : MonoBehaviour {
 
     public GameObject player, inGameCamera, spawnPoints;
-    public GameObject shooterPrefab, brawlerPrefab;
+    public GameObject shooterPrefab, brawlerPrefab, bossPrefab;
 
     public bool bossSpawned; // To prevent him from spawning again
 
@@ -24,7 +24,24 @@ public class GameManager : MonoBehaviour {
     InGameCameraManager inGameCameraManager;
 
     //The list of booleans for each command
-    private bool spawn_brawler, heal, player_fast, enemies_up_damage, stream_qual, spawn_shooter, player_double_damage, player_slow, enemies_slow, lag, bullet_up, traps, invincible, boss = false;
+    private bool spawn_brawler_bool = true, heal_bool = true, player_fast_bool = true, enemies_up_damage_bool = true, stream_qual_bool = true,
+        spawn_shooter_bool = true, player_double_damage_bool = true, player_slow_bool = true, enemies_slow_bool = true, lag_bool = true,
+        bullet_up_bool = true, traps_bool = true, invincible_bool = true, boss_bool = true;
+    [Header("Cooldowns")]
+    public float spawnBrawlerTimer;
+    public float healTimer;
+    public float playerSpeedUpTimer;
+    public float enemiesDamageUpTimer;
+    public float streamQualityTimer;
+    public float spawnShooterTimer;
+    public float playerDoubleDamageTimer;
+    public float playerSpeedDownTimer;
+    public float enemySpeedDownTimer;
+    public float lagTimer;
+    public float bulletUpgradeTimer;
+    public float trapsTimer;
+    public float invincibleTimer;
+    public float bossTimer;
 
     void Start () {
         inGameCameraManager = inGameCamera.GetComponent<InGameCameraManager>();
@@ -54,16 +71,65 @@ public class GameManager : MonoBehaviour {
 
         switch (messageSplit[0]) {
             case "spawnraptor":
-                SpawnEnemy(brawlerPrefab, 3, true);
+                if(spawn_brawler_bool)
+                    StartCoroutine(SpawnEnemy(brawlerPrefab, 3, true));
                 break;
             case "heal":
+                if (heal_bool)
+                    StartCoroutine(SpawnHealthPack());
+                break;
+            case "playerfast":
+                if (player_fast_bool)
+                    StartCoroutine(SetPlayerSpeed((int) player.GetComponent<Player>().speed + 2));
+                break;
+            case "enemydamup":
+                if (enemies_up_damage_bool)
+                    //StartCoroutine(EnemyDamageMultiplier())*************************************************************
+                    print("");
                 break;
             case "pixellate":
-                StartCoroutine(PixelEffect(pixelEffectIntensity, pixelEffectTime, pixelEffectFadeTime));
+                if(stream_qual_bool)
+                    StartCoroutine(PixelEffect(pixelEffectIntensity, pixelEffectTime, pixelEffectFadeTime));
+                break;
+            case "spawnshooter":
+                if (spawn_shooter_bool)
+                    StartCoroutine(SpawnEnemy(shooterPrefab, 3, true));
+                break;
+            case "playerdamup":
+                if (player_double_damage_bool)
+                    StartCoroutine(PlayerDamageMultiplier(2, 3));
+                break;
+            case "playerslow":
+                if (player_slow_bool)
+                    StartCoroutine(SetPlayerSpeed((int)player.GetComponent<Player>().speed - 2));
+                break;
+            case "enemyspddown":
+                if (enemies_slow_bool)
+                    //StartCoroutine(SetEnemySpeed());
+                    print("");
                 break;
             case "lag":
-                StartCoroutine(LagEffect(lagEffectTime));
-                StartCoroutine(PixelEffect(2, lagEffectTime, 0.5f));
+                if(lag_bool)
+                {
+                    StartCoroutine(LagEffect(lagEffectTime));
+                    StartCoroutine(PixelEffect(2, lagEffectTime, 0.5f));
+                }
+                break;
+            case "bulletup":
+                if (bullet_up_bool)
+                    StartCoroutine(UpgradePlayerBullets());
+                break;
+            case "trap":
+                if (traps_bool)
+                    StartCoroutine(SpawnTrap());
+                break;
+            case "invince":
+                if (invincible_bool)
+                    StartCoroutine(PlayerInvincibility(3f));
+                break;
+            case "boss":
+                if (boss_bool)
+                    StartCoroutine(SpawnEnemy(bossPrefab, 1, false));
                 break;
         }
     }
@@ -74,7 +140,8 @@ public class GameManager : MonoBehaviour {
 
     // Preferrably unless the different enemy types need different spawn behaviors,
     // just keep this as generic prefab spawn and pass in the enemy prefab you want
-    public void SpawnEnemy(GameObject prefab, int count, bool dontSpawnTogether = false) {
+    private IEnumerator SpawnEnemy(GameObject prefab, int count, bool dontSpawnTogether = false) {
+        spawn_brawler_bool = false;
         int spawnPointIndex = Random.Range(0, enemySpawnPoints.Count);
 
         for (int i = 0; i < count; ++i) {
@@ -87,43 +154,80 @@ public class GameManager : MonoBehaviour {
                 spawnPos.y + Random.Range(-spawnPointRange, spawnPointRange));
             Instantiate(prefab);
         }
+        yield return new WaitForSeconds(spawnBrawlerTimer);
+        spawn_brawler_bool = true;
+    }
+    
+    //Idk if we are using either of these because there might be a pickup for the player
+    //private IEnumerator SetPlayerHealth(int health) {
+    //    heal_bool = false;
+    //    player.GetComponent<Player>().SetHealth(health);
+    //    yield return new WaitForSeconds(healTimer);
+    //    heal_bool = true;
+    //}
+
+    //private IEnumerator AddPlayerHealth(int addHealth) {
+    //    player.GetComponent<Player>().SetHealth(player.GetComponent<Player>().health + addHealth);
+    //}
+
+    //private IEnumerator SetEnemyHealth(EnemyType type, int health) {
+        
+    //}
+
+    private IEnumerator SpawnHealthPack()
+    {
+        heal_bool = false;
+        yield return new WaitForSeconds(healTimer);
+        heal_bool = true;
     }
 
-    private void SetPlayerHealth(int health) {
-        player.GetComponent<Player>().SetHealth(health);
+    private IEnumerator SetPlayerSpeed(int speed) {
+        if(speed > player.GetComponent<PlayerMovement>().speed)
+        {
+            player_fast_bool = false;
+            player.GetComponent<PlayerMovement>().speed = speed;
+            yield return new WaitForSeconds(playerSpeedUpTimer);
+            player_fast_bool = true;
+        }
+        else
+        {
+            player_slow_bool = false;
+            player.GetComponent<PlayerMovement>().speed = speed;
+            yield return new WaitForSeconds(playerSpeedDownTimer);
+            player_slow_bool = true;
+        }
     }
 
-    private void AddPlayerHealth(int addHealth) {
-        player.GetComponent<Player>().SetHealth(player.GetComponent<Player>().health + addHealth);
+    private IEnumerator SetEnemySpeed(EnemyType type, float speed) {
+        player_fast_bool = false;
+        yield return new WaitForSeconds(playerSpeedUpTimer);
+        player_fast_bool = true;
     }
 
-    private void SetEnemyHealth(EnemyType type, int health) {
-
-    }
-
-    private void SetPlayerSpeed(int speed) {
-        player.GetComponent<PlayerMovement>().speed = speed;
-    }
-
-    private void SetEnemySpeed(EnemyType type, float speed) {
-
-    }
-
-    private void SetPlayerInvincible(float time) {
+    private IEnumerator SetPlayerInvincible(float time) {
+        invincible_bool = false;
         StartCoroutine(PlayerInvincibility(time));
+        yield return new WaitForSeconds(invincibleTimer);
+        invincible_bool = true;
     }
 
-    private void UpgradePlayerBullets() {
-
+    private IEnumerator UpgradePlayerBullets() {
+        bullet_up_bool = false;
+        yield return new WaitForSeconds(bulletUpgradeTimer);
+        bullet_up_bool = true;
     }
 
     // double damage, half damage, etc
-    private void PlayerDamageMultiplier(float multiplier, float time) {
-
+    private IEnumerator PlayerDamageMultiplier(float multiplier, float time) {
+        player_double_damage_bool = false;
+        yield return new WaitForSeconds(playerDoubleDamageTimer);
+        player_double_damage_bool = true;
     }
 
-    private void EnemyDamageMultiplier(EnemyType type, float multiplier, float time) {
-
+    private IEnumerator EnemyDamageMultiplier(EnemyType type, float multiplier, float time) {
+        enemies_up_damage_bool = false;
+        yield return new WaitForSeconds(enemiesDamageUpTimer);
+        enemies_up_damage_bool = true;
     }
 
     private IEnumerator PlayerInvincibility(float time) {
@@ -171,5 +275,12 @@ public class GameManager : MonoBehaviour {
         }
 
         inGameCameraManager.SetPixelEffectIntensity(0f);
+    }
+
+    private IEnumerator SpawnTrap()
+    {
+        traps_bool = false;
+        yield return new WaitForSeconds(trapsTimer);
+        traps_bool = true;
     }
 }
