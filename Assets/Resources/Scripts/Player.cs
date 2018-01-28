@@ -27,6 +27,8 @@ public class Player : MonoBehaviour {
     private Animator anim;
     public SpriteRenderer sr;
 
+    public GameObject game_over;
+
     void Awake() {
         anim = GetComponent<Animator>();
         reticle = transform.GetChild(0).GetComponent<Transform>();
@@ -80,6 +82,8 @@ public class Player : MonoBehaviour {
 
         health -= damage;
         if (health <= 0) {
+            game_over.SetActive(true);
+            Destroy(gameObject);
             // die function
         }
         health = Mathf.Clamp(health, 0, maxHealth);
