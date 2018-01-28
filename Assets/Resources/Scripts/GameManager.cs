@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour {
 
     InGameCameraManager inGameCameraManager;
 
+    public bulletScriptable bs;
+
     //The list of booleans for each command
     private bool spawn_brawler_bool = true, heal_bool = true, player_fast_bool = true, enemies_up_damage_bool = true, stream_qual_bool = true,
         spawn_shooter_bool = true, player_double_damage_bool = true, player_slow_bool = true, enemies_slow_bool = true, lag_bool = true,
@@ -48,6 +50,7 @@ public class GameManager : MonoBehaviour {
 
     void Start () {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("Score", 10000);
         inGameCameraManager = inGameCamera.GetComponent<InGameCameraManager>();
         enemySpawnPoints = new List<GameObject>();
         foreach (Transform childTransform in spawnPoints.transform) {
@@ -201,7 +204,6 @@ public class GameManager : MonoBehaviour {
             spot = new Vector3(player.transform.position.x + Random.Range(-5f, 5f), player.transform.position.y + 2 + Random.Range(-5f, 5f), 0);
             RaycastHit2D rh = Physics2D.Raycast(spot, Vector2.down, 0f);
 
-            print(rh.collider.name);
             if (rh.collider)
                 if (rh.collider.CompareTag("Spawnable"))
                     found_spot = true;
@@ -255,7 +257,11 @@ public class GameManager : MonoBehaviour {
     // double damage, half damage, etc
     private IEnumerator PlayerDamageMultiplier(float multiplier, float time) {
         player_double_damage_bool = false;
-        yield return new WaitForSeconds(playerDoubleDamageTimer);
+        int old_damage = bs.PlayerDamage;
+        bs.PlayerDamage = (int) (bs.PlayerDamage * multiplier);
+        yield return new WaitForSeconds(time);
+        bs.PlayerDamage = old_damage;
+        yield return new WaitForSeconds(playerDoubleDamageTimer - time);
         player_double_damage_bool = true;
     }
 

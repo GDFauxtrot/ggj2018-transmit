@@ -19,9 +19,14 @@ public class DumbEnemyAI : MonoBehaviour {
     private AudioSource audio_player;
     public AudioClip[] sounds;
 
+    private Animator anim;
+
     private bool can_damage = true;
 
+    public SpriteRenderer sr;
+
     void Start() {
+        anim = GetComponent<Animator>();
         audio_player = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         enemyRB = transform.GetComponent<Rigidbody2D>();
@@ -52,6 +57,32 @@ public class DumbEnemyAI : MonoBehaviour {
     private void move() {
         Vector2 playerPos = new Vector2(player.transform.position.x, player.transform.position.y);
         Vector2 enemyPos = new Vector2(transform.position.x, transform.position.y);
+
+
+        Vector2 diff = (playerPos - enemyPos).normalized;
+        anim.SetInteger("Direction", -1);
+        if(Mathf.Abs(diff.x) > Mathf.Abs(diff.y))
+        {
+            //Moving left and right
+            if (diff.x >= 0)
+            {
+                anim.SetInteger("Direction", 0);
+                sr.flipX = true;
+            }
+            else
+            {
+                anim.SetInteger("Direction", 2);
+                sr.flipX = false;
+            }
+        }
+        else
+        {
+            //Moving up and down
+            if (diff.y >= 0)
+                anim.SetInteger("Direction", 1);
+            else
+                anim.SetInteger("Direction", 3);
+        }
 
         enemyRB.MovePosition(Vector2.MoveTowards(enemyPos, playerPos, moveDelta));
     }
