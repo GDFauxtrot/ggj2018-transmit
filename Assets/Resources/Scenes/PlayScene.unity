@@ -209,6 +209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerToFollow: {fileID: 1092078915}
   mipMapBias: 0
+  cameraBoundsMin: {x: 85, y: 85}
+  cameraBoundsMax: {x: 115, y: 115}
 --- !u!114 &201170535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,6 +434,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1201804225412492, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294018290160438, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -908,7 +914,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1332484591}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 99.9, y: 99.3, z: 0}
+  m_LocalPosition: {x: 100, y: 100, z: 0}
   m_LocalScale: {x: 250, y: 250, z: 1}
   m_Children: []
   m_Father: {fileID: 957449038}
