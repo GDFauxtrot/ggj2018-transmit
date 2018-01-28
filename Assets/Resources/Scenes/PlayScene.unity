@@ -152,20 +152,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 198762083311415600, guid: 3c6023fee9349644baf91aa652ce91d7,
-        type: 2}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198762083311415600, guid: 3c6023fee9349644baf91aa652ce91d7,
-        type: 2}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 198762083311415600, guid: 3c6023fee9349644baf91aa652ce91d7,
-        type: 2}
-      propertyPath: randomSeed
-      value: -1182459997
+    - target: {fileID: 1665992502875720, guid: 3c6023fee9349644baf91aa652ce91d7, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c6023fee9349644baf91aa652ce91d7, type: 2}

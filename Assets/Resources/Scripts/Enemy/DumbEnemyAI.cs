@@ -21,7 +21,7 @@ public class DumbEnemyAI : MonoBehaviour {
 
     private Animator anim;
 
-    public bool can_damage = true, animate = true;
+    public bool can_damage = true, animate = true, boss = false;
 
     public SpriteRenderer sr;
 
@@ -92,7 +92,7 @@ public class DumbEnemyAI : MonoBehaviour {
     }
 
     private void checkIfDead() {
-        if (enemyHealth <= 0) {
+        if (enemyHealth <= 0 || !boss) {
             PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 50);
             Instantiate(death_explosion, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
             Destroy(this.gameObject);
@@ -105,6 +105,7 @@ public class DumbEnemyAI : MonoBehaviour {
         {
             yield return new WaitForSeconds(Random.Range(2f, 5f));
             audio_player.clip = sounds[Random.Range(0, sounds.Length)];
+            audio_player.pitch = Random.Range(0.9f, 1.1f);
             audio_player.Play();
         }
     }

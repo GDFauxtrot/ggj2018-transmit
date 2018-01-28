@@ -37,7 +37,7 @@ public class Player : MonoBehaviour {
 
     void Update () {
         if (Input.GetButtonDown("Fire1")) {
-            poolapi.request(shoot_particles.transform.position, Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z),false);
+            poolapi.request(shoot_particles.transform.position, Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z),"player");
             if (sr.flipX)
             {
                 shoot_particles.transform.rotation = Quaternion.Euler(new Vector3(0, 180, -25f));
