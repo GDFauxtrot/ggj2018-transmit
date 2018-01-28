@@ -113,34 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &18633793
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 18633794}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &18633794
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 18633793}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 107.8, y: 110.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1604911301}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &201170529
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerToFollow: {fileID: 1092078915}
+  playerCameraFollow: {fileID: 1807174856}
   mipMapBias: 0
   cameraBoundsMin: {x: 85, y: 85}
   cameraBoundsMax: {x: 115, y: 115}
@@ -433,10 +406,68 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 322922508}
+<<<<<<< HEAD
     - target: {fileID: 114134496025870500, guid: 41ca676b30f8789418cc54788cf8f98c,
         type: 2}
       propertyPath: level_step
       value: 1000
+=======
+    - target: {fileID: 1814241033644814, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962991994515662, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573237829038242, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039572752500960, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776249772652388, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008520088069678, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338935460719410, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201804225412492, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294018290160438, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289844016873580, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603946552829214, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864931618834590, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1031387429160720, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1257011347051484, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+>>>>>>> 00723dae6ff55030eb6c3e4e7c762abc3090974c
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
@@ -471,11 +502,16 @@ MonoBehaviour:
   player: {fileID: 1092078915}
   inGameCamera: {fileID: 201170529}
   spawnPoints: {fileID: 1604911300}
+<<<<<<< HEAD
   shooterPrefab: {fileID: 1196136940699662, guid: e9ac5af2b9909bb41856727ababbb791,
     type: 2}
   brawlerPrefab: {fileID: 1196136940699662, guid: e9ac5af2b9909bb41856727ababbb791,
     type: 2}
   bossPrefab: {fileID: 0}
+=======
+  shooterPrefab: {fileID: 0}
+  brawlerPrefab: {fileID: 0}
+>>>>>>> 00723dae6ff55030eb6c3e4e7c762abc3090974c
   bossSpawned: 0
   score: 5200000
   bossSpawnScore: 50000
@@ -627,9 +663,10 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 1366774499339450, guid: 2c684e2bdfd45ed4fb8177701187534c, type: 2}
-      propertyPath: m_TagString
-      value: Player
+    - target: {fileID: 114941515791856228, guid: 2c684e2bdfd45ed4fb8177701187534c,
+        type: 2}
+      propertyPath: cameraFollowStep
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c684e2bdfd45ed4fb8177701187534c, type: 2}
@@ -818,6 +855,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1366774499339450, guid: 2c684e2bdfd45ed4fb8177701187534c,
     type: 2}
   m_PrefabInternal: {fileID: 724211413}
+--- !u!4 &1092078919 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4677253812715672, guid: 2c684e2bdfd45ed4fb8177701187534c,
+    type: 2}
+  m_PrefabInternal: {fileID: 724211413}
 --- !u!1001 &1323390954
 Prefab:
   m_ObjectHideFlags: 0
@@ -966,9 +1008,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 18633794}
-  - {fileID: 1785317612}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1107,31 +1147,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1785317611
+--- !u!1 &1807174856
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1785317612}
+  - component: {fileID: 1807174857}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: CameraFollow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1785317612
+--- !u!4 &1807174857
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1785317611}
+  m_GameObject: {fileID: 1807174856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 90, y: 90.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1604911301}
+  m_Father: {fileID: 1092078919}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

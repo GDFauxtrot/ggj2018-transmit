@@ -48,6 +48,14 @@ public class bullet : MonoBehaviour {
 		if(tagTarget=="Enemy"&& other.tag=="Enemy")
 		{
 			other.GetComponent<DumbEnemyAI>().enemyHealth-=damage;
+			if(bulletScript.upgraded)
+			{
+				Debug.Log("ITTAI NEEDS TO WRITE THIS NOW");
+			}
+		}
+		if(tagTarget=="Player"&& other.tag=="Player")
+		{
+			other.GetComponent<Player>().SetHealth(other.GetComponent<Player>().health-damage);
 		}
 
 	}
