@@ -14746,6 +14746,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   open: {fileID: 1285995819914068}
   close: {fileID: 1692385365520216}
+  open_sounds: {fileID: 0}
+  close_sounds: {fileID: 0}
+  sounds: {fileID: 0}
 --- !u!114 &114313172422908070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14759,6 +14762,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   open: {fileID: 1595659099131426}
   close: {fileID: 1997360515905424}
+  open_sounds: {fileID: 0}
+  close_sounds: {fileID: 0}
+  sounds: {fileID: 0}
 --- !u!114 &114386342169307936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14772,6 +14778,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   open: {fileID: 1913195377526278}
   close: {fileID: 1083496287517160}
+  open_sounds: {fileID: 0}
+  close_sounds: {fileID: 0}
+  sounds: {fileID: 0}
 --- !u!114 &114900391280078344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14785,6 +14794,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   open: {fileID: 1425072783566872}
   close: {fileID: 1641980240904386}
+  open_sounds: {fileID: 0}
+  close_sounds: {fileID: 0}
+  sounds: {fileID: 0}
 --- !u!212 &212001019606003998
 SpriteRenderer:
   m_ObjectHideFlags: 1
