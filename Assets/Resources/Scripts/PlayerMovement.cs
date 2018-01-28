@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		if (Input.GetButtonDown("Fire1"))
         {
-			poolapi.request(reticle.position + (reticle.right / 5), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z));
+			poolapi.request(reticle.position + (reticle.right / 5), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z),false);
         }
 	}
 	// Update is called once per frame

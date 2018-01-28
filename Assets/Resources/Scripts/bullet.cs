@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour {
 
-	public float speed;
+
+	private string tagTarget;
+	public float playerSpeed;
+	public float enemyspeed;
+	public float playerDamage;
+	public float enemyDamage;
+	private float speed;
+	private float damage;
 	private Rigidbody2D rb2d;
 	public GameObject pool;
 	// Update is called once per frame
@@ -16,8 +23,6 @@ public class bullet : MonoBehaviour {
 	{
 		rb2d=GetComponent<Rigidbody2D>();
         pool = transform.parent.gameObject;
-
-
         // transform.rotation=(transform.localRotation);
     }
 
@@ -25,17 +30,28 @@ public class bullet : MonoBehaviour {
 	/// Start is called on the frame when a script is enabled just before
 	/// any of the Update methods is called the first time.
 	/// </summary>
-	void Start()
-	{
-	}
+
+
 	void FixedUpdate () {
 		Vector2 moving=transform.right*speed*Time.deltaTime;
 
 		rb2d.MovePosition(rb2d.position+moving);
 	}
 
-	public void ReturnToPool()
-	{
+	public void ReturnToPool(bool enemy)
+	{	
+		if(enemy)
+		{
+			speed=enemyspeed;
+			damage=enemyDamage;
+			tagTarget="Player";
+		}
+		else
+		{
+			speed = playerSpeed;
+            damage = playerDamage;
+            tagTarget = "Enemy";
+		}
         gameObject.transform.parent = null;
         Invoke("RET",2);
 	}
