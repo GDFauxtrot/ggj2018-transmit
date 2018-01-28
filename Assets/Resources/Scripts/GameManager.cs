@@ -9,11 +9,14 @@ public class GameManager : MonoBehaviour {
 
     public GameObject player, inGameCamera, spawnPoints;
     public GameObject shooterPrefab, brawlerPrefab, bossPrefab;
+    public Text score_text, health_text;
 
     public bool bossSpawned; // To prevent him from spawning again
 
     public int score;
     public int bossSpawnScore;
+
+    public GameObject health_pack;
 
     public float spawnPointRange; // How far away can enemies spawn from the spawn points (spawning them exactly on would be boring)
 
@@ -22,6 +25,8 @@ public class GameManager : MonoBehaviour {
     List<GameObject> enemySpawnPoints; // This is all we need, as far as I'm concerned
 
     InGameCameraManager inGameCameraManager;
+
+    public bulletScriptable bs;
 
     //The list of booleans for each command
     private bool spawn_brawler_bool = true, heal_bool = true, player_fast_bool = true, enemies_up_damage_bool = true, stream_qual_bool = true,
@@ -44,6 +49,8 @@ public class GameManager : MonoBehaviour {
     public float bossTimer;
 
     void Start () {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("Score", 10000);
         inGameCameraManager = inGameCamera.GetComponent<InGameCameraManager>();
         enemySpawnPoints = new List<GameObject>();
         foreach (Transform childTransform in spawnPoints.transform) {
@@ -52,6 +59,13 @@ public class GameManager : MonoBehaviour {
     }
     
     void Update () {
+        health_text.text = "Health: " +  player.GetComponent<Player>().health.ToString();
+
+        score = PlayerPrefs.GetInt("Score");
+        if (score > 999 && score < 999999)
+            score_text.text = "Score: " + score.ToString().Substring(0,score.ToString().Length - 3) + "," + score.ToString().Substring(score.ToString().Length - 3, 3);
+        else if (score >= 0 && score <= 999)
+            score_text.text = "Score: " + score;
         if (score > bossSpawnScore && !bossSpawned) {
             SpawnBoss();
         }
@@ -147,6 +161,12 @@ public class GameManager : MonoBehaviour {
             if (dontSpawnTogether) // flip this bool to put each one at a different spawn point
                 spawnPointIndex = Random.Range(0, enemySpawnPoints.Count);
 
+            if(!enemySpawnPoints[spawnPointIndex].GetComponent<SpawnPointIsOn>().isactive)
+            {
+                //Reset the loop as if it didnt happen (i.e. choose a new spawn)
+                --i;
+                continue;
+            }
             Vector2 spawnPos = enemySpawnPoints[spawnPointIndex].transform.position;
             prefab.transform.position = new Vector2(
                 spawnPos.x + Random.Range(-spawnPointRange, spawnPointRange),
@@ -176,6 +196,19 @@ public class GameManager : MonoBehaviour {
     private IEnumerator SpawnHealthPack()
     {
         heal_bool = false;
+        bool found_spot = false;
+        Vector3 spot = Vector3.zero;
+        while(!found_spot)
+        {
+            yield return new WaitForSeconds(0.01f);
+            spot = new Vector3(player.transform.position.x + Random.Range(-5f, 5f), player.transform.position.y + 2 + Random.Range(-5f, 5f), 0);
+            RaycastHit2D rh = Physics2D.Raycast(spot, Vector2.down, 0f);
+
+            if (rh.collider)
+                if (rh.collider.CompareTag("Spawnable"))
+                    found_spot = true;
+        }
+        Instantiate(health_pack, spot, Quaternion.identity);
         yield return new WaitForSeconds(healTimer);
         heal_bool = true;
     }
@@ -224,7 +257,11 @@ public class GameManager : MonoBehaviour {
     // double damage, half damage, etc
     private IEnumerator PlayerDamageMultiplier(float multiplier, float time) {
         player_double_damage_bool = false;
-        yield return new WaitForSeconds(playerDoubleDamageTimer);
+        int old_damage = bs.PlayerDamage;
+        bs.PlayerDamage = (int) (bs.PlayerDamage * multiplier);
+        yield return new WaitForSeconds(time);
+        bs.PlayerDamage = old_damage;
+        yield return new WaitForSeconds(playerDoubleDamageTimer - time);
         player_double_damage_bool = true;
     }
 

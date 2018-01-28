@@ -10,9 +10,9 @@ public class Chat_Controller : MonoBehaviour
     public GameObject text_test;
     public InputField player_input;
     public GameObject command_panel;
-    public Text current_viewers;
+    public Text viewers_text;
+    private int viewers_to_reach = 0, current_viewers = 0;
 
-    private int count = 0;
     [Header("Game Manager")]
     public GameManager gm;
 
@@ -79,23 +79,23 @@ public class Chat_Controller : MonoBehaviour
     void Start()
     {
         if (maxViewers == 0)
-            maxViewers = Random.Range(1000000, 9999999);
+            maxViewers = Random.Range(50000, 500000);
         player_input.Select();
         StartCoroutine(SpamChat());
+        StartCoroutine(Setting_Viewers());
     }
 
     private IEnumerator SpamChat()
     {
         while (true)
         {
-            //float ratio = Mathf.Clamp(gm.score / highScore, 0.0f, 1.0f);
+            float ratio = Mathf.Clamp(gm.score / highScore, 0.0f, 1.0f);
 
-            //float minWait = Mathf.Lerp(minWaitAtLowScore, minWaitAtHighScore, ratio);
-            //float maxWait = Mathf.Lerp(maxWaitAtLowScore, maxWaitAtHighScore, ratio);
+            float minWait = Mathf.Lerp(minWaitAtLowScore, minWaitAtHighScore, ratio);
+            float maxWait = Mathf.Lerp(maxWaitAtLowScore, maxWaitAtHighScore, ratio);
 
             //Should change the wait depending on the score of the game, higher score = less wait between messages
-            yield return new WaitForSeconds(Random.Range(0.5f, 1f));
-            //yield return new WaitForSeconds(Random.Range(minWait, maxWait));
+            yield return new WaitForSeconds(Random.Range(minWait, maxWait));
 
 
             int rand = Random.Range(0, 100);
@@ -120,7 +120,7 @@ public class Chat_Controller : MonoBehaviour
         else
             command_panel.SetActive(false);
 
-        current_viewers.text = Mathf.Lerp(minViewers, maxViewers, gm.score / highScore).ToString();
+        viewers_to_reach = ((int) Mathf.Lerp(minViewers, maxViewers, gm.score / (highScore*10)));
 
         current_max_command_index = max_command_index[Mathf.Min(((int)gm.score) / level_step, max_command_index.Length-1)];
 
@@ -199,5 +199,38 @@ public class Chat_Controller : MonoBehaviour
             }
         }
 
+    }
+
+    private IEnumerator Setting_Viewers()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(Random.Range(0.01f, 0.1f));
+            if (current_viewers < viewers_to_reach)
+            {
+                int next_count = current_viewers + Random.Range(-1, 10);
+
+                if(next_count > 999)
+                {
+                    viewers_text.text = next_count.ToString().Substring(0, next_count.ToString().Length - 3) + "," + next_count.ToString().Substring(next_count.ToString().Length - 3, 3);
+                }
+                //This was for if they are in the millions but it felt weird
+                //else if(next_count > 999999)
+                //{
+                //    viewers_text.text = next_count.ToString().Substring(0, next_count.ToString().Length - 6) + "," + next_count.ToString().Substring(0, next_count.ToString().Length - 3) + "," + next_count.ToString().Substring(next_count.ToString().Length - 3, 3);
+                //}
+                else if(next_count <= 999)
+                {
+                    viewers_text.text = next_count.ToString();
+                }
+                current_viewers = next_count;
+            }
+            else
+            {
+                current_viewers = Mathf.Max(0, (current_viewers + Random.Range(-5, 5)));
+                viewers_text.text = current_viewers.ToString();
+                yield return new WaitForSeconds(Random.Range(0.4f, 0.7f));
+            }
+        }
     }
 }

@@ -61,7 +61,7 @@ public class bullet : MonoBehaviour {
 		}
 		if(tagTarget=="Player"&& other.tag=="Player")
 		{
-			other.GetComponent<Player>().SetHealth(other.GetComponent<Player>().health-damage);
+			other.GetComponent<Player>().TakeDamage(damage);
             CancelInvoke();
 
             RET();
@@ -97,7 +97,7 @@ public class bullet : MonoBehaviour {
 			else
 			{
                 speed = bulletScript.UpPlayerSpeed;
-                damage = bulletScript.UpPlayerDamage;
+                damage = bulletScript.PlayerDamage;
                 gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = bulletScript.bulletTypes[0];
                 tagTarget = "Enemy";
 			}
