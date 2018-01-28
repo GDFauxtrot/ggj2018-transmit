@@ -260,6 +260,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private IEnumerator PixelEffect(float intensity, float time, float fadeTime) {
+        stream_qual_bool = false;
         float timeStep = 0f;
 
         while (timeStep < 1f) {
@@ -279,6 +280,8 @@ public class GameManager : MonoBehaviour {
         }
 
         inGameCameraManager.SetPixelEffectIntensity(0f);
+        yield return new WaitForSeconds(streamQualityTimer);
+        stream_qual_bool = true;
     }
 
     private IEnumerator SpawnTrap()
