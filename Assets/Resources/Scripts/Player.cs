@@ -34,6 +34,16 @@ public class Player : MonoBehaviour {
             poolapi.request(reticle.position + (reticle.right), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z),false);
             shoot_particles.transform.rotation = Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z);
             shoot_particles.GetComponent<ParticleSystem>().Play();
+            StartCoroutine(ScreenShake());
+        }
+    }
+
+    private IEnumerator ScreenShake()
+    {
+        for(int i = 0; i < 2; ++i)
+        {
+            cameraFollow.transform.position += new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), 0);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

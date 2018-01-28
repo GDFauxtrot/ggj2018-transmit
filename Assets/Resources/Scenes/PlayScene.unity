@@ -628,6 +628,11 @@ Prefab:
       propertyPath: shoot_particles
       value: 
       objectReference: {fileID: 834113462}
+    - target: {fileID: 114941515791856228, guid: 2c684e2bdfd45ed4fb8177701187534c,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 201170529}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c684e2bdfd45ed4fb8177701187534c, type: 2}
   m_IsPrefabParent: 0
