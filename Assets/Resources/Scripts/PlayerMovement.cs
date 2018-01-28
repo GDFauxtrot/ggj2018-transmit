@@ -24,13 +24,13 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		if (Input.GetButtonDown("Fire1"))
         {
-			poolapi.request(reticle.position + (reticle.right / 5), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z),false);
+			poolapi.request(reticle.position + (reticle.right / 5), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z), false);
         }
 	}
 	// Update is called once per frame
 	void FixedUpdate() {
 		Vector2 movement = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
-
+        
         float mag = movement.magnitude;
         movement.Normalize();
         if (mag < 1f) 

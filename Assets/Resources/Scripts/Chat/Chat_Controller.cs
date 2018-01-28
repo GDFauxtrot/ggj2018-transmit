@@ -128,15 +128,6 @@ public class Chat_Controller : MonoBehaviour {
         if (bold)
             text_obj.fontStyle = FontStyle.Bold;
 
-        //This is for handling multi-lines with the username being a different color
-        //Canvas.ForceUpdateCanvases();
-        //if(text_obj.cachedTextGenerator.lines.Count > 1)
-        //{
-        //    int next_line_index = text_obj.cachedTextGenerator.lines[1].startCharIdx;
-        //    Add_Message(text_obj.text.Substring(next_line_index, text_obj.text.Length - next_line_index), bold, caps);
-        //    text_obj.text = text_obj.text.Substring(0, next_line_index);
-        //}
-
         //Dont want to have to do this but doing it for now
         Canvas.ForceUpdateCanvases();
         int empty_line_num = text_obj.cachedTextGenerator.lineCount;
