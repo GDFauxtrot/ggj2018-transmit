@@ -428,15 +428,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1008520088069678, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1338935460719410, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1201804225412492, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1294018290160438, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
       propertyPath: m_IsActive

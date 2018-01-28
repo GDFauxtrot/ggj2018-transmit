@@ -23,10 +23,14 @@ public class GameManager : MonoBehaviour {
 
     InGameCameraManager inGameCameraManager;
 
+    //The list of booleans for each command
+    private bool spawn_brawler, heal, player_fast, enemies_up_damage, stream_qual, spawn_shooter, player_double_damage, player_slow, enemies_slow, lag, bullet_up, traps, invincible, boss = false;
+
     void Start () {
         inGameCameraManager = inGameCamera.GetComponent<InGameCameraManager>();
-
+        enemySpawnPoints = new List<GameObject>();
         foreach (Transform childTransform in spawnPoints.transform) {
+            print("hi");
             enemySpawnPoints.Add(childTransform.gameObject);
         }
     }
@@ -49,7 +53,8 @@ public class GameManager : MonoBehaviour {
         string[] messageSplit = message.Split();
 
         switch (messageSplit[0]) {
-            case "spawn":
+            case "spawnraptor":
+                SpawnEnemy(brawlerPrefab, 3, true);
                 break;
             case "heal":
                 break;
