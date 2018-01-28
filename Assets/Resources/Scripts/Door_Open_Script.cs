@@ -12,7 +12,6 @@ public class Door_Open_Script : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        print("asdfs");
     }
 
     void OnTriggerStay2D(Collider2D c)
