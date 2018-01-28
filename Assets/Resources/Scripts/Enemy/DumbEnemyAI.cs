@@ -90,7 +90,7 @@ public class DumbEnemyAI : MonoBehaviour {
     private void checkIfDead() {
         if (enemyHealth <= 0) {
             PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 50);
-            Instantiate(death_explosion, transform.position, Quaternion.identity);
+            Instantiate(death_explosion, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
