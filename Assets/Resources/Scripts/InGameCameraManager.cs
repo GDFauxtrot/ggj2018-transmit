@@ -7,23 +7,28 @@ using UnityEngine.UI;
 public class InGameCameraManager : MonoBehaviour {
 
     public GameObject playerToFollow;
+    public GameObject playerCameraFollow;
 
     public float mipMapBias;
 
     public Vector2 cameraBoundsMin, cameraBoundsMax;
 
     void Start () {
-        
     }
     
     void Update () {
         GetComponent<Camera>().targetTexture.mipMapBias = mipMapBias;
+    }
 
-        if (playerToFollow != null) {
-            transform.position = new Vector3(
-                Mathf.Clamp(playerToFollow.transform.position.x, cameraBoundsMin.x, cameraBoundsMax.x),
-                Mathf.Clamp(playerToFollow.transform.position.y, cameraBoundsMin.y, cameraBoundsMax.y), transform.position.z);
+    void LateUpdate() {
+        if (playerCameraFollow != null) {
+            transform.position = new Vector3(playerCameraFollow.transform.position.x, playerCameraFollow.transform.position.y, transform.position.z);
         }
+
+        // CAMERA BOUNDS
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, cameraBoundsMin.x, cameraBoundsMax.x),
+            Mathf.Clamp(transform.position.y, cameraBoundsMin.y, cameraBoundsMax.y), transform.position.z);
     }
 
     internal void SetPixelEffectIntensity(float intensity) {
