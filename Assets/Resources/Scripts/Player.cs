@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
     public GameObject shoot_particles;
 
     public float cameraFollowStep;
+    private AudioSource shoot_sound;
 
     GameObject cameraFollow;
 
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour {
         reticle = transform.GetChild(0).GetComponent<Transform>();
         rb2D = GetComponent<Rigidbody2D>();
         cameraFollow = transform.GetChild(1).gameObject;
+        shoot_sound = GetComponent<AudioSource>();
     }
 
     void Update () {
@@ -34,6 +36,8 @@ public class Player : MonoBehaviour {
             poolapi.request(reticle.position + (reticle.right), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z),false);
             shoot_particles.transform.rotation = Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z);
             shoot_particles.GetComponent<ParticleSystem>().Play();
+            shoot_sound.pitch = Random.Range(0.9f, 1.1f);
+            shoot_sound.Play();
             StartCoroutine(ScreenShake());
         }
     }
