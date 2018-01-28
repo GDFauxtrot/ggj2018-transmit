@@ -21,10 +21,8 @@ public class DumbEnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Vector2 playerPos = new Vector2(player.transform.position.x, player.transform.position.y);
-        Vector2 enemyPos = new Vector2(transform.position.x, transform.position.y);
-        
-        enemyRB.MovePosition(Vector2.MoveTowards(enemyPos, playerPos, moveDelta));
+        move();                     // Moves the enemy towards the player.
+        checkIfDead();              // Checks if health has fallen below 0, and destroys the GameObject.
 	}
 
     // Move this into a Brawler script.
@@ -39,5 +37,17 @@ public class DumbEnemyAI : MonoBehaviour {
             }
             playerScript.SetHealth(playerScript.health - damage);
         }
+    }
+
+    //Private Functions: Nothing else needs to call these, so im making them private.
+    private void move() {
+        Vector2 playerPos = new Vector2(player.transform.position.x, player.transform.position.y);
+        Vector2 enemyPos = new Vector2(transform.position.x, transform.position.y);
+
+        enemyRB.MovePosition(Vector2.MoveTowards(enemyPos, playerPos, moveDelta));
+    }
+
+    private void checkIfDead() {
+        if (enemyHealth <= 0) { Destroy(this.gameObject); }
     }
 }
