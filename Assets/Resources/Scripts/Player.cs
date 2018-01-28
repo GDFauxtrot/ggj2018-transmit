@@ -101,12 +101,29 @@ public class Player : MonoBehaviour {
 
 
         float right_or_left = Input.GetAxis("RstickHorizontal");
+        anim.SetFloat("SpeedMult", 1);
         if (right_or_left != 0)
         {
             if (right_or_left < -0.2f)
+            {
                 sr.flipX = true;
+                //Back Running
+                if (movement.x > 0)
+                    anim.SetFloat("SpeedMult", -1);
+            }
             else if (right_or_left > 0.2f)
+            {
                 sr.flipX = false;
+                if (movement.x < 0)
+                    anim.SetFloat("SpeedMult", -1);
+            }
+        }
+        else
+        {
+            if (movement.x > 0)
+                sr.flipX = false;
+            else if (movement.x < 0)
+                sr.flipX = true;
         }
 
 
