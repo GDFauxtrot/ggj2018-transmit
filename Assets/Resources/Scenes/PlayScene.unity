@@ -433,47 +433,6 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 322922508}
-    - target: {fileID: 1814241033644814, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962991994515662, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1573237829038242, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1039572752500960, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1776249772652388, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1008520088069678, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1338935460719410, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201804225412492, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1294018290160438, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114134496025870500, guid: 41ca676b30f8789418cc54788cf8f98c,
-        type: 2}
-      propertyPath: current_viewers
-      value: 
-      objectReference: {fileID: 1443311437}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
   m_IsPrefabParent: 0
@@ -963,12 +922,6 @@ Transform:
   m_Father: {fileID: 957449038}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1443311437 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114436555276693810, guid: 41ca676b30f8789418cc54788cf8f98c,
-    type: 2}
-  m_PrefabInternal: {fileID: 315213369}
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1604911300
 GameObject:
   m_ObjectHideFlags: 0

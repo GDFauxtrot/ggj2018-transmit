@@ -61,11 +61,15 @@ public class Chat_Controller : MonoBehaviour
       6  Temp invincibility
       7  Boss spawning
      */
-    private CommandData[] commands = new CommandData[] { new CommandData("!SpawnRaptors", "spawnraptor"), new CommandData("!LagPlayer", "lag") };
+    private CommandData[] commands = new CommandData[] { new CommandData("!SpawnRaptors", "spawnraptor"), new CommandData("!HealPlayer", "heal"), new CommandData("!PlayerSpeedUp", "playerfast"), new CommandData("!EnemiesUpDamage", "enemydamup"),
+        new CommandData("!StreamQualityDown", "pixellate"), new CommandData("!SpawnShooter", "spawnshooter"), new CommandData("!PlayerDamageUp", "playerdamup"), new CommandData("!PlayerSpeedDown", "playerslow"),
+        new CommandData("!EnemiesSpeedDown", "enemyspddown"),new CommandData("!LagPlayer", "lag"), new CommandData("!BulletUpgrade", "bulletup"), new CommandData("!SpawnTrap", "trap"), new CommandData("!Invincibility", "invince"), new CommandData("!SpawnBoss", "boss")};
 
     private string[] useless_messages = new string[] { "You Suck!", "Best Streamer Ever!", "I Love you player1", "uu n00b l0l", "I wish people respected you more", "I hate this game play something else", "I could play this so much better than you can", "reeeeeeeeeeeeee",
     "<message deleted>"};
     private string[] colors = new string[] { "aqua", "blue", "brown", "red", "yellow", "navy", "orange", "purple", "lime", "green", "magenta", "maroon" };
+
+    private int[] max_command_index = new int[] { 1, 3, 5, 8, 11, 12, 13 };
 
     // Use this for initialization
     void Start()
