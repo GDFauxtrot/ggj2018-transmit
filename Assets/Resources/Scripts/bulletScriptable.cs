@@ -9,7 +9,7 @@ public class bulletScriptable : ScriptableObject {
 
 	[Tooltip("0 is the default, 1 is upgraded, 2 is enemy")]
 	public List<Sprite> bulletTypes;
-
+	public Material special;
 
 
 
