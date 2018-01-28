@@ -15,6 +15,7 @@ public class PowerUpPickUp : MonoBehaviour {
 		if(other.tag=="Player")
 		{
 			bullets.upgraded=true;
+			Destroy(gameObject);
 		}
 	}
 }
