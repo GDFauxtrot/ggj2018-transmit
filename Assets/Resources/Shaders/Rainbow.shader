@@ -61,7 +61,7 @@ Shader "Unlit/Rainbow"
 			{
 				// sample the texture				
 
-				i.uv+=-_Time*10;
+				i.uv+=_Time*10;
 				
 				fixed4 	col = tex2D(_rainbow, i.uv);
 		
