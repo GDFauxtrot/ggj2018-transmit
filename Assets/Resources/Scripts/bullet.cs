@@ -5,15 +5,19 @@ using UnityEngine;
 public class bullet : MonoBehaviour {
 
 
+
+ 	public bulletScriptable bulletScript;
 	private string tagTarget;
-	public float playerSpeed;
-	public float enemyspeed;
-	public float playerDamage;
-	public float enemyDamage;
+
+
 	private float speed;
 	private float damage;
+
+
 	private Rigidbody2D rb2d;
 	public GameObject pool;
+
+
 	// Update is called once per frame
 	/// <summary>
 	/// Start is called on the frame when a script is enabled just before
@@ -38,19 +42,37 @@ public class bullet : MonoBehaviour {
 		rb2d.MovePosition(rb2d.position+moving);
 	}
 
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+	
+
+	}
+	
 	public void ReturnToPool(bool enemy)
 	{	
 		if(enemy)
 		{
-			speed=enemyspeed;
-			damage=enemyDamage;
+			speed=bulletScript.EnemySpeed;
+			damage=bulletScript.EnemyDamage;
 			tagTarget="Player";
+			gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = bulletScript.bulletTypes[2];
 		}
 		else
 		{
-			speed = playerSpeed;
-            damage = playerDamage;
-            tagTarget = "Enemy";
+			if(bulletScript.upgraded){
+				speed = bulletScript.UpPlayerSpeed;
+				damage = bulletScript.UpPlayerDamage;
+				gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite=bulletScript.bulletTypes[1];
+				tagTarget = "Enemy";
+			}
+			else
+			{
+                speed = bulletScript.UpPlayerSpeed;
+                damage = bulletScript.UpPlayerDamage;
+                gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = bulletScript.bulletTypes[0];
+                tagTarget = "Enemy";
+			}
 		}
         gameObject.transform.parent = null;
         Invoke("RET",2);
