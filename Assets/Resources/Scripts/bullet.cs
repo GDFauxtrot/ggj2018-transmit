@@ -17,6 +17,8 @@ public class bullet : MonoBehaviour {
 	private Rigidbody2D rb2d;
 	public GameObject pool;
 
+    public GameObject player_bullet_explosion;
+
 
 	// Update is called once per frame
 	/// <summary>
@@ -52,10 +54,17 @@ public class bullet : MonoBehaviour {
 			{
 				Debug.Log("ITTAI NEEDS TO WRITE THIS NOW");
 			}
+            Instantiate(player_bullet_explosion, transform.position, Quaternion.identity);
+            CancelInvoke();
+
+            RET();
 		}
 		if(tagTarget=="Player"&& other.tag=="Player")
 		{
 			other.GetComponent<Player>().SetHealth(other.GetComponent<Player>().health-damage);
+            CancelInvoke();
+
+            RET();
 		}
 
 	}

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -48,27 +49,18 @@ TagManager:
   - name: Walls
     uniqueID: 1336979459
     locked: 0
-  - name: Bathroom Walls
-    uniqueID: 3692324323
-    locked: 0
-  - name: Bathroom Doors
+  - name: Bathroom
     uniqueID: 294380799
+    locked: 0
+  - name: Kitchen
+    uniqueID: 1921113217
+    locked: 0
+  - name: Booths
+    uniqueID: 1686807653
     locked: 0
   - name: Player
     uniqueID: 4022162653
     locked: 0
-  - name: CounterLower
-    uniqueID: 3724005323
-    locked: 0
-  - name: CounterUpper
-    uniqueID: 449083563
-    locked: 0
-  - name: KitchenTops
-    uniqueID: 1921113217
-    locked: 0
-  - name: BoothsLower
-    uniqueID: 430205815
-    locked: 0
-  - name: Booths
-    uniqueID: 1686807653
+  - name: Enemy
+    uniqueID: 699566141
     locked: 0

@@ -181,18 +181,23 @@ public class GameManager : MonoBehaviour {
     }
 
     private IEnumerator SetPlayerSpeed(int speed) {
-        if(speed > player.GetComponent<Player>().speed)
+        float oldspeed = player.GetComponent<Player>().speed;
+        if (speed > player.GetComponent<Player>().speed)
         {
             player_fast_bool = false;
             player.GetComponent<Player>().speed = speed;
-            yield return new WaitForSeconds(playerSpeedUpTimer);
+            yield return new WaitForSeconds(5f);
+            player.GetComponent<Player>().speed = oldspeed;
+            yield return new WaitForSeconds(playerSpeedUpTimer - 5f);
             player_fast_bool = true;
         }
         else
         {
             player_slow_bool = false;
             player.GetComponent<Player>().speed = speed;
-            yield return new WaitForSeconds(playerSpeedDownTimer);
+            yield return new WaitForSeconds(5f);
+            player.GetComponent<Player>().speed = oldspeed;
+            yield return new WaitForSeconds(playerSpeedDownTimer - 5f);
             player_slow_bool = true;
         }
     }
@@ -255,6 +260,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private IEnumerator PixelEffect(float intensity, float time, float fadeTime) {
+        stream_qual_bool = false;
         float timeStep = 0f;
 
         while (timeStep < 1f) {
@@ -274,6 +280,8 @@ public class GameManager : MonoBehaviour {
         }
 
         inGameCameraManager.SetPixelEffectIntensity(0f);
+        yield return new WaitForSeconds(streamQualityTimer);
+        stream_qual_bool = true;
     }
 
     private IEnumerator SpawnTrap()
