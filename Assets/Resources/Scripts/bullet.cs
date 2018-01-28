@@ -59,7 +59,7 @@ public class bullet : MonoBehaviour {
 
             RET();
 		}
-		if(tagTarget=="Player"&& other.tag=="Player")
+		if((tagTarget=="Player" || tagTarget == "Player_Boss")&& other.tag=="Player")
 		{
 			other.GetComponent<Player>().TakeDamage(damage);
             CancelInvoke();
@@ -69,6 +69,8 @@ public class bullet : MonoBehaviour {
 
         if(other.tag == "Untagged")
         {
+            if (tagTarget == "Player_Boss")
+                return;
             if(tagTarget == "Enemy")
                 Instantiate(player_bullet_explosion, transform.position, Quaternion.identity);
             CancelInvoke();
@@ -77,16 +79,16 @@ public class bullet : MonoBehaviour {
 
 	}
 	
-	public void ReturnToPool(bool enemy)
+	public void ReturnToPool(string shooter_type)
 	{	
-		if(enemy)
+		if(shooter_type == "enemy")
 		{
 			speed=bulletScript.EnemySpeed;
 			damage=bulletScript.EnemyDamage;
 			tagTarget="Player";
 			gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = bulletScript.bulletTypes[2];
 		}
-		else
+		else if(shooter_type == "player")
 		{
 			if(bulletScript.upgraded){
 				speed = bulletScript.UpPlayerSpeed;
@@ -102,8 +104,15 @@ public class bullet : MonoBehaviour {
                 tagTarget = "Enemy";
 			}
 		}
+        else if(shooter_type == "boss")
+        {
+            speed = bulletScript.EnemySpeed;
+            damage = bulletScript.EnemyDamage;
+            tagTarget = "Player_Boss";
+            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = bulletScript.bulletTypes[2];
+        }
         gameObject.transform.parent = null;
-        Invoke("RET",2);
+        Invoke("RET",4);
 	}
 
 	void RET()

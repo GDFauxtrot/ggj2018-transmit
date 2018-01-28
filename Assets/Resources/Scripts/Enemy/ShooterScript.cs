@@ -24,7 +24,7 @@ public class ShooterScript : MonoBehaviour {
             float bulletAngle = Mathf.Atan2(bulletVector.y, bulletVector.x) * Mathf.Rad2Deg;
 
             Quaternion rotation = Quaternion.Euler(0, 0, bulletAngle);
-            bulletPool.request(transform.position, rotation, true);
+            bulletPool.request(transform.position, rotation, "enemy");
             StartCoroutine(Reload());
         }
     }
