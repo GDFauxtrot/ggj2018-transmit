@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 10
+  poolAPI: {fileID: 11400000, guid: c6cc333c805db0447a06eb1fa98a098c, type: 2}
   bullet: {fileID: 1534005795848046, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
 --- !u!4 &431090905
 Transform:
@@ -283,11 +284,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 470787382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef851b399082f754d9bbdb4e91d93f7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 307d29ed3c5a0b84d88b4990f75d6b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1534005795848046, guid: c27dcfb9d4952a54bb614a592c37bea2, type: 2}
-  speed: 3
+  health: 10
+  maxHealth: 10
+  speed: 5
+  isInvincible: 0
+  poolapi: {fileID: 11400000, guid: c6cc333c805db0447a06eb1fa98a098c, type: 2}
 --- !u!50 &470787384
 Rigidbody2D:
   serializedVersion: 4
