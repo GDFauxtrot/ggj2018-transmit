@@ -56,12 +56,17 @@ Shader "Unlit/Rainbow"
 				UNITY_TRANSFER_FOG(o,o.vertex);
 				return o;
 			}
-			
+
+
+				float GetAlpha(v2f i){
+				return tex2D(_MainTex,i.uv.xy).a;
+				}
 			fixed4 frag (v2f i) : SV_Target
 			{
 				// sample the texture				
-
-				i.uv+=_Time*10;
+				float alpha =GetAlpha(i);
+				clip(alpha-0.5);
+				i.uv+=_Time*100;
 				
 				fixed4 	col = tex2D(_rainbow, i.uv);
 		

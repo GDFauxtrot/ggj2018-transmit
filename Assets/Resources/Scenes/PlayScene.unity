@@ -441,6 +441,7 @@ MonoBehaviour:
   bossSpawnScore: 10000
   health_pack: {fileID: 1336338198273172, guid: 474fafe101bebf1429ff098e7b75e58e,
     type: 2}
+  PowerUp: {fileID: 1623817987900128, guid: 755d3e675d6d7254f879f36c7c0c5a9b, type: 2}
   spawnPointRange: 0.25
   pixelEffectIntensity: 4
   pixelEffectTime: 5

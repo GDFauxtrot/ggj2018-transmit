@@ -292,7 +292,9 @@ MonoBehaviour:
   speed: 5
   isInvincible: 0
   poolapi: {fileID: 11400000, guid: c6cc333c805db0447a06eb1fa98a098c, type: 2}
+  shoot_particles: {fileID: 0}
   cameraFollowStep: 0
+  sr: {fileID: 0}
 --- !u!50 &470787384
 Rigidbody2D:
   serializedVersion: 4
@@ -437,6 +439,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1306738881
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4349228505185134, guid: 755d3e675d6d7254f879f36c7c0c5a9b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349228505185134, guid: 755d3e675d6d7254f879f36c7c0c5a9b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349228505185134, guid: 755d3e675d6d7254f879f36c7c0c5a9b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349228505185134, guid: 755d3e675d6d7254f879f36c7c0c5a9b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349228505185134, guid: 755d3e675d6d7254f879f36c7c0c5a9b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349228505185134, guid: 755d3e675d6d7254f879f36c7c0c5a9b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349228505185134, guid: 755d3e675d6d7254f879f36c7c0c5a9b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349228505185134, guid: 755d3e675d6d7254f879f36c7c0c5a9b, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 755d3e675d6d7254f879f36c7c0c5a9b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1405805646
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,7 +645,7 @@ GameObject:
   - component: {fileID: 1725692839}
   - component: {fileID: 1725692838}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: specialBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,8 +685,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 681dfcd02945e444198b5e9fa98f946d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bc63326955716274d8957a163637bb7f, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
