@@ -41,6 +41,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1495163034843406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4529849912096328}
+  - component: {fileID: 82517484758639486}
+  m_Layer: 0
+  m_Name: DeathScream
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1665992502875720
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,12 +103,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1665992502875720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 91.58, y: 115.03, z: -0.28782368}
+  m_LocalPosition: {x: 91.75, y: 113.92, z: -0.28782368}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4362712714073092}
   - {fileID: 4714070278024214}
   - {fileID: 4453501165267670}
+  - {fileID: 4529849912096328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -121,6 +138,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4128532770826268}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4529849912096328
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495163034843406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4128532770826268}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4714070278024214
 Transform:
@@ -260,6 +290,86 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &82517484758639486
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495163034843406}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0c5899d5bf38ea3489ba99ecdba0b712, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95970209001340278
 Animator:
   serializedVersion: 3
@@ -315,6 +425,15 @@ MonoBehaviour:
   bulletPool: {fileID: 11400000, guid: c6cc333c805db0447a06eb1fa98a098c, type: 2}
   left: {fileID: 1100161884420576}
   right: {fileID: 1023413223350956}
+  death_scream: {fileID: 1495163034843406}
+  shoot: {fileID: 8300000, guid: 81769613321dee843be95c9454c011bf, type: 3}
+  small_explode: {fileID: 8300000, guid: 675973ee110902a4b9f296a65c09b6c9, type: 3}
+  big_explode: {fileID: 8300000, guid: 68237fcc1f9bc024eb600527d8a885d1, type: 3}
+  explosion_small: {fileID: 1875098022631948, guid: c97ceafdd58b16d49b193fecd3a1e5f4,
+    type: 2}
+  explosion_large: {fileID: 1456745925531638, guid: 64dd5d77194cac14db41aaca66ec3dfe,
+    type: 2}
+  floating: {fileID: 1757541821302782}
 --- !u!198 &198762083311415600
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -375,7 +494,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1182459997
+  randomSeed: 1912575680
   InitialModule:
     serializedVersion: 3
     enabled: 1

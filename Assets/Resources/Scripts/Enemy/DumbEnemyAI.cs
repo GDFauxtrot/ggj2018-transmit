@@ -97,6 +97,11 @@ public class DumbEnemyAI : MonoBehaviour {
             Instantiate(death_explosion, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
+        else if(boss && enemyHealth <= 0)
+        {
+            StartCoroutine(transform.GetComponent<Boss_Shooting>().Death());
+            GetComponent<DumbEnemyAI>().enabled = false;
+        }
     }
 
     private IEnumerator Make_Sounds()
@@ -106,6 +111,7 @@ public class DumbEnemyAI : MonoBehaviour {
             yield return new WaitForSeconds(Random.Range(2f, 5f));
             audio_player.clip = sounds[Random.Range(0, sounds.Length)];
             audio_player.pitch = Random.Range(0.9f, 1.1f);
+            audio_player.volume = 0.8f;
             audio_player.Play();
         }
     }

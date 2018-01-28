@@ -50,10 +50,7 @@ public class bullet : MonoBehaviour {
 		if(tagTarget=="Enemy"&& other.tag=="Enemy")
 		{
 			other.GetComponent<DumbEnemyAI>().enemyHealth-=damage;
-			if(bulletScript.upgraded)
-			{
-				Debug.Log("ITTAI NEEDS TO WRITE THIS NOW");
-			}
+
             Instantiate(player_bullet_explosion, transform.position, Quaternion.identity);
             CancelInvoke();
 
@@ -93,7 +90,7 @@ public class bullet : MonoBehaviour {
 			if(bulletScript.upgraded){
 				speed = bulletScript.UpPlayerSpeed;
 				damage = bulletScript.UpPlayerDamage;
-				gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite=bulletScript.bulletTypes[1];
+				gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().material=bulletScript.special;
 				tagTarget = "Enemy";
 			}
 			else
