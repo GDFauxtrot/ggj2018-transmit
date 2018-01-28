@@ -2,15 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletScriptable : MonoBehaviour {
+[CreateAssetMenu(menuName = " Player bullet types")]
 
-	// Use this for initialization
-	void Start () {
-		
+public class bulletScriptable : ScriptableObject {
+
+
+	[Tooltip("0 is the default, 1 is upgraded, 2 is enemy")]
+	public List<Sprite> bulletTypes;
+
+
+
+
+
+	public float PlayerSpeed;
+	public int PlayerDamage;
+
+    public float UpPlayerSpeed;
+    public int UpPlayerDamage;
+
+    public bool upgraded;
+
+
+	public float EnemySpeed;
+	public int EnemyDamage;
+
+	public void resetEverything()
+	{
+		upgraded=false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void PLayerGrabStronger()
+	{
+		upgraded=true;
 	}
-}
+
+};
