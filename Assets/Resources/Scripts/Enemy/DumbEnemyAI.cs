@@ -21,7 +21,7 @@ public class DumbEnemyAI : MonoBehaviour {
 
     private Animator anim;
 
-    private bool can_damage = true;
+    public bool can_damage = true, animate = true;
 
     public SpriteRenderer sr;
 
@@ -59,30 +59,34 @@ public class DumbEnemyAI : MonoBehaviour {
         Vector2 enemyPos = new Vector2(transform.position.x, transform.position.y);
 
 
-        Vector2 diff = (playerPos - enemyPos).normalized;
-        anim.SetInteger("Direction", -1);
-        if(Mathf.Abs(diff.x) > Mathf.Abs(diff.y))
+        if(animate)
         {
-            //Moving left and right
-            if (diff.x >= 0)
+            Vector2 diff = (playerPos - enemyPos).normalized;
+            anim.SetInteger("Direction", -1);
+            if (Mathf.Abs(diff.x) > Mathf.Abs(diff.y))
             {
-                anim.SetInteger("Direction", 0);
-                sr.flipX = true;
+                //Moving left and right
+                if (diff.x >= 0)
+                {
+                    anim.SetInteger("Direction", 0);
+                    sr.flipX = true;
+                }
+                else
+                {
+                    anim.SetInteger("Direction", 2);
+                    sr.flipX = false;
+                }
             }
             else
             {
-                anim.SetInteger("Direction", 2);
-                sr.flipX = false;
+                //Moving up and down
+                if (diff.y >= 0)
+                    anim.SetInteger("Direction", 1);
+                else
+                    anim.SetInteger("Direction", 3);
             }
         }
-        else
-        {
-            //Moving up and down
-            if (diff.y >= 0)
-                anim.SetInteger("Direction", 1);
-            else
-                anim.SetInteger("Direction", 3);
-        }
+
 
         enemyRB.MovePosition(Vector2.MoveTowards(enemyPos, playerPos, moveDelta));
     }
