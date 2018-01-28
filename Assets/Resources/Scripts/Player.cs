@@ -21,13 +21,14 @@ public class Player : MonoBehaviour {
 
     public float cameraFollowStep;
     private AudioSource shoot_sound;
+    public AudioSource hurt;
 
     GameObject cameraFollow;
 
     private Animator anim;
     public SpriteRenderer sr;
 
-    public GameObject game_over;
+    public GameObject game_over, eat;
 
     void Awake() {
         anim = GetComponent<Animator>();
@@ -88,7 +89,10 @@ public class Player : MonoBehaviour {
         }
         health = Mathf.Clamp(health, 0, maxHealth);
         if(damage > 0)
+        {
             StartCoroutine(IFrames());
+            hurt.Play();
+        }
     }
 
     private IEnumerator IFrames()
@@ -239,5 +243,10 @@ public class Player : MonoBehaviour {
             Mathf.Lerp(cameraFollow.transform.localPosition.x, delta.x, cameraFollowStep),
             Mathf.Lerp(cameraFollow.transform.localPosition.y + 0.5f, delta.y, cameraFollowStep),
             cameraFollow.transform.position.z);
+    }
+
+    public void Munch()
+    {
+        eat.GetComponent<AudioSource>().Play();
     }
 }
