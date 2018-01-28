@@ -52,14 +52,18 @@ public class bullet : MonoBehaviour {
 			{
 				Debug.Log("ITTAI NEEDS TO WRITE THIS NOW");
 			}
+            CancelInvoke();
+
+            RET();
 		}
 		if(tagTarget=="Player"&& other.tag=="Player")
 		{
 			other.GetComponent<Player>().SetHealth(other.GetComponent<Player>().health-damage);
-		}
-		CancelInvoke();
+            CancelInvoke();
 
-        RET();
+            RET();
+		}
+
 	}
 	
 	public void ReturnToPool(bool enemy)
