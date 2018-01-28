@@ -18,6 +18,8 @@ public class Player : MonoBehaviour {
 
     public BulletPoolScriptable poolapi;
 
+    public float cameraFollowStep;
+
     GameObject cameraFollow;
 
     void Awake() {
@@ -61,6 +63,9 @@ public class Player : MonoBehaviour {
 
         Vector3 delta = nextPosition - prevPosition;
 
-        cameraFollow.transform.localPosition = new Vector3(delta.x, delta.y, cameraFollow.transform.position.z);
+        cameraFollow.transform.localPosition = new Vector3(
+            Mathf.Lerp(cameraFollow.transform.localPosition.x, delta.x, cameraFollowStep),
+            Mathf.Lerp(cameraFollow.transform.localPosition.y, delta.y, cameraFollowStep),
+            cameraFollow.transform.position.z);
     }
 }
