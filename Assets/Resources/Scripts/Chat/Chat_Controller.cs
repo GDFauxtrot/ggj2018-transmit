@@ -49,7 +49,7 @@ public class Chat_Controller : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        player_input.Select();
+        //player_input.Select();
         StartCoroutine(SpamChat());
     }
 
