@@ -47,9 +47,10 @@ public class Player : MonoBehaviour {
         movement.Normalize();
         if (mag < 1f)
             movement = new Vector2(movement.x * mag, movement.y * mag);
-
+        
         rb2D.MovePosition(rb2D.position+movement*speed*Time.deltaTime);
         // Mathf.Atan2 returns the tangent line to the two float values given, and then we multiple it to get it as an angle.
+        
         reticle.eulerAngles = new Vector3(0, 0, Mathf.Atan2(Input.GetAxis("RstickVertical"), Input.GetAxis("RstickHorizontal")) * 180 / Mathf.PI);
     }
 }

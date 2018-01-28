@@ -10,6 +10,8 @@ public class InGameCameraManager : MonoBehaviour {
 
     public float mipMapBias;
 
+    public Vector2 cameraBoundsMin, cameraBoundsMax;
+
     void Start () {
         
     }
@@ -17,8 +19,11 @@ public class InGameCameraManager : MonoBehaviour {
     void Update () {
         GetComponent<Camera>().targetTexture.mipMapBias = mipMapBias;
 
-        if (playerToFollow != null)
-            transform.position = new Vector3(playerToFollow.transform.position.x, playerToFollow.transform.position.y, transform.position.z);
+        if (playerToFollow != null) {
+            transform.position = new Vector3(
+                Mathf.Clamp(playerToFollow.transform.position.x, cameraBoundsMin.x, cameraBoundsMax.x),
+                Mathf.Clamp(playerToFollow.transform.position.y, cameraBoundsMin.y, cameraBoundsMax.y), transform.position.z);
+        }
     }
 
     internal void SetPixelEffectIntensity(float intensity) {
