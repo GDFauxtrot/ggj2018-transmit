@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &113527657 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1706967630337494, guid: 41ca676b30f8789418cc54788cf8f98c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1254209575}
 --- !u!1 &201170529
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +274,7 @@ MonoBehaviour:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114033277308097286, guid: 41ca676b30f8789418cc54788cf8f98c,
     type: 2}
-  m_PrefabInternal: {fileID: 1187117851}
+  m_PrefabInternal: {fileID: 1254209575}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &274865750
 GameObject:
@@ -436,7 +441,7 @@ MonoBehaviour:
   bossSpawnScore: 10000
   health_pack: {fileID: 1336338198273172, guid: 474fafe101bebf1429ff098e7b75e58e,
     type: 2}
-  PowerUp: {fileID: 1623817987900128, guid: 755d3e675d6d7254f879f36c7c0c5a9b, type: 2}
+  PowerUp: {fileID: 0}
   spawnPointRange: 0.25
   pixelEffectIntensity: 4
   pixelEffectTime: 5
@@ -877,6 +882,11 @@ Prefab:
     - target: {fileID: 4958800769366830, guid: 2c684e2bdfd45ed4fb8177701187534c, type: 2}
       propertyPath: m_LocalPosition.y
       value: -0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 198546055945330414, guid: 2c684e2bdfd45ed4fb8177701187534c,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c684e2bdfd45ed4fb8177701187534c, type: 2}
@@ -1337,7 +1347,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!1001 &1187117851
+--- !u!1001 &1254209575
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1439,65 +1449,32 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 322922508}
-    - target: {fileID: 114134496025870500, guid: 41ca676b30f8789418cc54788cf8f98c,
+    - target: {fileID: 114997486993217202, guid: 41ca676b30f8789418cc54788cf8f98c,
         type: 2}
-      propertyPath: minWaitAtLowScore
-      value: 15
+      propertyPath: to_disable
+      value: 
+      objectReference: {fileID: 113527657}
+    - target: {fileID: 114997486993217202, guid: 41ca676b30f8789418cc54788cf8f98c,
+        type: 2}
+      propertyPath: name_of_streamer
+      value: 
+      objectReference: {fileID: 1650446056}
+    - target: {fileID: 114415033737342830, guid: 41ca676b30f8789418cc54788cf8f98c,
+        type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436555276693810, guid: 41ca676b30f8789418cc54788cf8f98c,
+        type: 2}
+      propertyPath: m_Text
+      value: '0
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 114134496025870500, guid: 41ca676b30f8789418cc54788cf8f98c,
         type: 2}
-      propertyPath: maxWaitAtLowScore
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114134496025870500, guid: 41ca676b30f8789418cc54788cf8f98c,
-        type: 2}
-      propertyPath: highScore
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114521801634754598, guid: 41ca676b30f8789418cc54788cf8f98c,
-        type: 2}
-      propertyPath: m_FontData.m_FontStyle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114081581440024964, guid: 41ca676b30f8789418cc54788cf8f98c,
-        type: 2}
-      propertyPath: m_FontData.m_FontStyle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114372561926574392, guid: 41ca676b30f8789418cc54788cf8f98c,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114444968685639396, guid: 41ca676b30f8789418cc54788cf8f98c,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114800771634543306, guid: 41ca676b30f8789418cc54788cf8f98c,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114781901539124184, guid: 41ca676b30f8789418cc54788cf8f98c,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114521801634754598, guid: 41ca676b30f8789418cc54788cf8f98c,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865781593015206, guid: 41ca676b30f8789418cc54788cf8f98c,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114081581440024964, guid: 41ca676b30f8789418cc54788cf8f98c,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 0
+      propertyPath: randomChanceOfCommand
+      value: 66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
@@ -1698,7 +1675,7 @@ GameObject:
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114766615274583340, guid: 41ca676b30f8789418cc54788cf8f98c,
     type: 2}
-  m_PrefabInternal: {fileID: 1187117851}
+  m_PrefabInternal: {fileID: 1254209575}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1602473495 stripped
 GameObject:
@@ -1785,6 +1762,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1650446056 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114415033737342830, guid: 41ca676b30f8789418cc54788cf8f98c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1254209575}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1772152058
 GameObject:
   m_ObjectHideFlags: 0
