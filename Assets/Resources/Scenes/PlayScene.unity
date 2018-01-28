@@ -210,8 +210,8 @@ MonoBehaviour:
   playerToFollow: {fileID: 1092078915}
   playerCameraFollow: {fileID: 1807174856}
   mipMapBias: 0
-  cameraBoundsMin: {x: 85, y: 85}
-  cameraBoundsMax: {x: 115, y: 115}
+  cameraBoundsMin: {x: 77, y: 79}
+  cameraBoundsMax: {x: 122, y: 118}
 --- !u!114 &201170535
 MonoBehaviour:
   m_ObjectHideFlags: 0
