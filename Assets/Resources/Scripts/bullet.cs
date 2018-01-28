@@ -57,7 +57,9 @@ public class bullet : MonoBehaviour {
 		{
 			other.GetComponent<Player>().SetHealth(other.GetComponent<Player>().health-damage);
 		}
+		CancelInvoke();
 
+        RET();
 	}
 	
 	public void ReturnToPool(bool enemy)
