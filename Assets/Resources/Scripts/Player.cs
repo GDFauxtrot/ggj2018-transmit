@@ -93,11 +93,11 @@ public class Player : MonoBehaviour {
         Vector3 prevPosition = transform.position;
         Vector3 nextPosition = (rb2D.position+movement*speed*Time.deltaTime);
 
-        Vector3 delta = nextPosition - prevPosition;
+        Vector3 delta = (nextPosition - prevPosition) * 5;
 
         cameraFollow.transform.localPosition = new Vector3(
             Mathf.Lerp(cameraFollow.transform.localPosition.x, delta.x, cameraFollowStep),
-            Mathf.Lerp(cameraFollow.transform.localPosition.y, delta.y, cameraFollowStep),
+            Mathf.Lerp(cameraFollow.transform.localPosition.y + 0.5f, delta.y, cameraFollowStep),
             cameraFollow.transform.position.z);
     }
 }

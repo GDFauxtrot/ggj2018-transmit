@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour {
 
     void Start () {
         PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("Score", 100000);
         inGameCameraManager = inGameCamera.GetComponent<InGameCameraManager>();
         enemySpawnPoints = new List<GameObject>();
         foreach (Transform childTransform in spawnPoints.transform) {
