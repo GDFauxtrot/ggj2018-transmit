@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af4d7b8fb0a8af548985f7db6183a06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  death_explosion: {fileID: 0}
   enemyHealth: 3
   moveDelta: 0
   damage: 5
@@ -330,7 +331,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 182512846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd6305920626fd74597eef6f89740154, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f97f9f197f995043a2fd8508863e3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPool: {fileID: 11400000, guid: c6cc333c805db0447a06eb1fa98a098c, type: 2}
