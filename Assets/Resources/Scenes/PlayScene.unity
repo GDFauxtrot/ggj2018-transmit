@@ -368,6 +368,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 70248341002250608, guid: e9ac5af2b9909bb41856727ababbb791,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.07933625
+      objectReference: {fileID: 0}
+    - target: {fileID: 70248341002250608, guid: e9ac5af2b9909bb41856727ababbb791,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.4679891
+      objectReference: {fileID: 0}
+    - target: {fileID: 70248341002250608, guid: e9ac5af2b9909bb41856727ababbb791,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 1.6372344
+      objectReference: {fileID: 0}
+    - target: {fileID: 114356956780861170, guid: e9ac5af2b9909bb41856727ababbb791,
+        type: 2}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 964128979}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9ac5af2b9909bb41856727ababbb791, type: 2}
   m_IsPrefabParent: 0
@@ -1171,6 +1191,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &964128979 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212321063401111608, guid: e9ac5af2b9909bb41856727ababbb791,
+    type: 2}
+  m_PrefabInternal: {fileID: 216038540}
 --- !u!1 &992753088 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1207698603061964, guid: db9cebd8dc81d894fb9d493f4a12bb94,

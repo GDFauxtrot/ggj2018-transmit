@@ -204,7 +204,6 @@ public class GameManager : MonoBehaviour {
             spot = new Vector3(player.transform.position.x + Random.Range(-5f, 5f), player.transform.position.y + 2 + Random.Range(-5f, 5f), 0);
             RaycastHit2D rh = Physics2D.Raycast(spot, Vector2.down, 0f);
 
-            print(rh.collider.name);
             if (rh.collider)
                 if (rh.collider.CompareTag("Spawnable"))
                     found_spot = true;
@@ -257,7 +256,6 @@ public class GameManager : MonoBehaviour {
 
     // double damage, half damage, etc
     private IEnumerator PlayerDamageMultiplier(float multiplier, float time) {
-        print("yo");
         player_double_damage_bool = false;
         int old_damage = bs.PlayerDamage;
         bs.PlayerDamage = (int) (bs.PlayerDamage * multiplier);

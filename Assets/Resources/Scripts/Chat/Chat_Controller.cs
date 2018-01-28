@@ -208,7 +208,6 @@ public class Chat_Controller : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(0.01f, 0.1f));
             if (current_viewers < viewers_to_reach)
             {
-                print(viewers_to_reach);
                 int next_count = current_viewers + Random.Range(-1, 10);
 
                 if(next_count > 999)
