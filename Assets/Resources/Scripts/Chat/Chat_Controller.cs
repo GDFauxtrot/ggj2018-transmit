@@ -27,7 +27,7 @@ public class Chat_Controller : MonoBehaviour
     public int randomChanceOfCommand = 25;
 
     //This is a test max to be the cutoff on the top
-    private GameObject[] text_list = new GameObject[18];
+    private GameObject[] text_list = new GameObject[16];
     //private Stack<KeyValuePair<GameObject, int>> text_stack;
 
 
