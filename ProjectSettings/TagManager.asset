@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: player
+  - name: Walls
+    uniqueID: 1336979459
+    locked: 0
+  - name: Bathroom Walls
+    uniqueID: 3692324323
+    locked: 0
+  - name: Bathroom Doors
+    uniqueID: 294380799
+    locked: 0
+  - name: Player
     uniqueID: 4022162653
+    locked: 0
+  - name: CounterLower
+    uniqueID: 3724005323
+    locked: 0
+  - name: CounterUpper
+    uniqueID: 449083563
+    locked: 0
+  - name: KitchenTops
+    uniqueID: 1921113217
     locked: 0

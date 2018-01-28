@@ -48,10 +48,6 @@ public class bullet : MonoBehaviour {
 		if(tagTarget=="Enemy"&& other.tag=="Enemy")
 		{
 			other.GetComponent<DumbEnemyAI>().enemyHealth-=damage;
-			//if(bulletScript.upgraded)
-			//{
-
-			//}
 		}
 
 	}
