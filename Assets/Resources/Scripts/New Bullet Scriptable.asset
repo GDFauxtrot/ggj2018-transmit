@@ -15,10 +15,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bc63326955716274d8957a163637bb7f, type: 3}
   - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 21300000, guid: cfbb173712865054ca060f9f251a18ea, type: 3}
+  special: {fileID: 2100000, guid: e8640502c785ffd42bf974f5f492d2af, type: 2}
   PlayerSpeed: 10
   PlayerDamage: 3
   UpPlayerSpeed: 15
   UpPlayerDamage: 5
-  upgraded: 0
+  upgraded: 1
   EnemySpeed: 10
   EnemyDamage: 5

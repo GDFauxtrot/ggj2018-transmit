@@ -292,7 +292,9 @@ MonoBehaviour:
   speed: 5
   isInvincible: 0
   poolapi: {fileID: 11400000, guid: c6cc333c805db0447a06eb1fa98a098c, type: 2}
+  shoot_particles: {fileID: 0}
   cameraFollowStep: 0
+  sr: {fileID: 0}
 --- !u!50 &470787384
 Rigidbody2D:
   serializedVersion: 4
@@ -601,7 +603,7 @@ GameObject:
   - component: {fileID: 1725692839}
   - component: {fileID: 1725692838}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: specialBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,8 +643,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 681dfcd02945e444198b5e9fa98f946d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bc63326955716274d8957a163637bb7f, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
