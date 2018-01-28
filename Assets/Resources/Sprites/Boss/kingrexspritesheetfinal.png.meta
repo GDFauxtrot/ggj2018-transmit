@@ -1,9 +1,52 @@
 fileFormatVersion: 2
 guid: bff66ab5a5701514894a9f81cf821543
-timeCreated: 1517142648
+timeCreated: 1517144426
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: kingrexspritesheetfinal_0
+    21300002: kingrexspritesheetfinal_1
+    21300004: kingrexspritesheetfinal_2
+    21300006: kingrexspritesheetfinal_3
+    21300008: kingrexspritesheetfinal_4
+    21300010: kingrexspritesheetfinal_5
+    21300012: kingrexspritesheetfinal_6
+    21300014: kingrexspritesheetfinal_7
+    21300016: kingrexspritesheetfinal_8
+    21300018: kingrexspritesheetfinal_9
+    21300020: kingrexspritesheetfinal_10
+    21300022: kingrexspritesheetfinal_11
+    21300024: kingrexspritesheetfinal_12
+    21300026: kingrexspritesheetfinal_13
+    21300028: kingrexspritesheetfinal_14
+    21300030: kingrexspritesheetfinal_15
+    21300032: kingrexspritesheetfinal_16
+    21300034: kingrexspritesheetfinal_17
+    21300036: kingrexspritesheetfinal_18
+    21300038: kingrexspritesheetfinal_19
+    21300040: kingrexspritesheetfinal_20
+    21300042: kingrexspritesheetfinal_21
+    21300044: kingrexspritesheetfinal_22
+    21300046: kingrexspritesheetfinal_23
+    21300048: kingrexspritesheetfinal_24
+    21300050: kingrexspritesheetfinal_25
+    21300052: kingrexspritesheetfinal_26
+    21300054: kingrexspritesheetfinal_27
+    21300056: kingrexspritesheetfinal_28
+    21300058: kingrexspritesheetfinal_29
+    21300060: kingrexspritesheetfinal_30
+    21300062: kingrexspritesheetfinal_31
+    21300064: kingrexspritesheetfinal_32
+    21300066: kingrexspritesheetfinal_33
+    21300068: kingrexspritesheetfinal_34
+    21300070: kingrexspritesheetfinal_35
+    21300072: kingrexspritesheetfinal_36
+    21300074: kingrexspritesheetfinal_37
+    21300076: kingrexspritesheetfinal_38
+    21300078: kingrexspritesheetfinal_39
+    21300080: kingrexspritesheetfinal_40
+    21300082: kingrexspritesheetfinal_41
+    21300084: kingrexspritesheetfinal_42
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -31,7 +74,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -40,7 +83,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -66,9 +109,641 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1407.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_1
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1407.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_2
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 1407.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_3
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1407.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_4
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1407.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_5
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 1407.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_6
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 1407.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_7
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 1407.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_8
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 1407.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1056.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_10
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1056.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_11
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 1056.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_12
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1056.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_13
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1056.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_14
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 1056.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_15
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 1056.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_16
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 1056.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_17
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 1056.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 705.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_19
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 705.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_20
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 705.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_21
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 705.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_22
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 705.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_23
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 705.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_24
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 705.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_25
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 705.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_26
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 705.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 354.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_28
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 354.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_29
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 354.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_30
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 354.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_31
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 354.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_32
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 354.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_33
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 354.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_34
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 354.2
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3.2000122
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_36
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 3.2000122
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_37
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 3.2000122
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_38
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 3.2000122
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_39
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 3.2000122
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_40
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 3.2000122
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_41
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 3.2000122
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kingrexspritesheetfinal_42
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 3.2000122
+        width: 426
+        height: 351.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
