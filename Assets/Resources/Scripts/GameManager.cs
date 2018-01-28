@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 
     public GameObject player, inGameCamera, spawnPoints;
     public GameObject shooterPrefab, brawlerPrefab, bossPrefab;
+    public Text score_text, health_text;
 
     public bool bossSpawned; // To prevent him from spawning again
 
@@ -44,6 +45,8 @@ public class GameManager : MonoBehaviour {
     public float bossTimer;
 
     void Start () {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("Score", 100000);
         inGameCameraManager = inGameCamera.GetComponent<InGameCameraManager>();
         enemySpawnPoints = new List<GameObject>();
         foreach (Transform childTransform in spawnPoints.transform) {
@@ -52,6 +55,13 @@ public class GameManager : MonoBehaviour {
     }
     
     void Update () {
+        health_text.text = "Health: " +  player.GetComponent<Player>().health.ToString();
+
+        score = PlayerPrefs.GetInt("Score");
+        if (score > 999 && score < 999999)
+            score_text.text = "Score: " + score.ToString().Substring(0,score.ToString().Length - 3) + "," + score.ToString().Substring(score.ToString().Length - 3, 3);
+        else if (score >= 0 && score <= 999)
+            score_text.text = "Score: " + score;
         if (score > bossSpawnScore && !bossSpawned) {
             SpawnBoss();
         }

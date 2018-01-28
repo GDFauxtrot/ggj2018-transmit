@@ -51,15 +51,30 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public void SetHealth(int h) {
-        if (isInvincible && h < health)
+    public void TakeDamage(int damage) {
+        if (isInvincible && damage < health)
             return;
 
-        health = h;
+        health -= damage;
         if (health <= 0) {
             // die function
         }
         health = Mathf.Clamp(health, 0, maxHealth);
+        StartCoroutine(IFrames());
+    }
+
+    private IEnumerator IFrames()
+    {
+        isInvincible = true;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        for(int i = 0; i < 15; ++i)
+        {
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.5f);
+            yield return new WaitForSeconds(0.05f);
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1);
+            yield return new WaitForSeconds(0.05f);
+        }
+        isInvincible = false;
     }
 
     void FixedUpdate() {

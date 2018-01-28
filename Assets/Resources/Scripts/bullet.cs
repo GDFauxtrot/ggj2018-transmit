@@ -61,7 +61,7 @@ public class bullet : MonoBehaviour {
 		}
 		if(tagTarget=="Player"&& other.tag=="Player")
 		{
-			other.GetComponent<Player>().SetHealth(other.GetComponent<Player>().health-damage);
+			other.GetComponent<Player>().TakeDamage(damage);
             CancelInvoke();
 
             RET();
