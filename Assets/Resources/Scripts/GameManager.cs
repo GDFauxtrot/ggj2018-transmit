@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour {
         inGameCameraManager = inGameCamera.GetComponent<InGameCameraManager>();
         enemySpawnPoints = new List<GameObject>();
         foreach (Transform childTransform in spawnPoints.transform) {
-            print("hi");
             enemySpawnPoints.Add(childTransform.gameObject);
         }
     }
@@ -182,17 +181,17 @@ public class GameManager : MonoBehaviour {
     }
 
     private IEnumerator SetPlayerSpeed(int speed) {
-        if(speed > player.GetComponent<PlayerMovement>().speed)
+        if(speed > player.GetComponent<Player>().speed)
         {
             player_fast_bool = false;
-            player.GetComponent<PlayerMovement>().speed = speed;
+            player.GetComponent<Player>().speed = speed;
             yield return new WaitForSeconds(playerSpeedUpTimer);
             player_fast_bool = true;
         }
         else
         {
             player_slow_bool = false;
-            player.GetComponent<PlayerMovement>().speed = speed;
+            player.GetComponent<Player>().speed = speed;
             yield return new WaitForSeconds(playerSpeedDownTimer);
             player_slow_bool = true;
         }
