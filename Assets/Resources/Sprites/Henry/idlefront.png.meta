@@ -1,33 +1,33 @@
 fileFormatVersion: 2
-guid: 74011d667f8b2e64b92d16f9edfe0efe
-timeCreated: 1517170999
+guid: 0df885e9f7b666f4495073ac0cb48b90
+timeCreated: 1517176533
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: runback_0
-    21300002: runback_1
-    21300004: runback_2
-    21300006: runback_3
-    21300008: runback_4
-    21300010: runback_5
-    21300012: runback_6
-    21300014: runback_7
-    21300016: runback_8
-    21300018: runback_9
-    21300020: runback_10
-    21300022: runback_11
-    21300024: runback_12
-    21300026: runback_13
-    21300028: runback_14
-    21300030: runback_15
-    21300032: runback_16
-    21300034: runback_17
-    21300036: runback_18
-    21300038: runback_19
-    21300040: runback_20
-    21300042: runback_21
-    21300044: runback_22
-    21300046: runback_23
+    21300000: idlefront_0
+    21300002: idlefront_1
+    21300004: idlefront_2
+    21300006: idlefront_3
+    21300008: idlefront_4
+    21300010: idlefront_5
+    21300012: idlefront_6
+    21300014: idlefront_7
+    21300016: idlefront_8
+    21300018: idlefront_9
+    21300020: idlefront_10
+    21300022: idlefront_11
+    21300024: idlefront_12
+    21300026: idlefront_13
+    21300028: idlefront_14
+    21300030: idlefront_15
+    21300032: idlefront_16
+    21300034: idlefront_17
+    21300036: idlefront_18
+    21300038: idlefront_19
+    21300040: idlefront_20
+    21300042: idlefront_21
+    21300044: idlefront_22
+    21300046: idlefront_23
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -124,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: runback_0
+      name: idlefront_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 711
-        width: 152
-        height: 237
+        y: 484
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,13 +138,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_1
+      name: idlefront_1
       rect:
         serializedVersion: 2
-        x: 152
-        y: 711
-        width: 152
-        height: 237
+        x: 87
+        y: 484
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,13 +152,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_2
+      name: idlefront_2
       rect:
         serializedVersion: 2
-        x: 304
-        y: 711
-        width: 152
-        height: 237
+        x: 174
+        y: 484
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,13 +166,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_3
+      name: idlefront_3
       rect:
         serializedVersion: 2
-        x: 456
-        y: 711
-        width: 152
-        height: 237
+        x: 261
+        y: 484
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,13 +180,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_4
+      name: idlefront_4
       rect:
         serializedVersion: 2
-        x: 608
-        y: 711
-        width: 152
-        height: 237
+        x: 348
+        y: 484
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,13 +194,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_5
+      name: idlefront_5
       rect:
         serializedVersion: 2
-        x: 760
-        y: 711
-        width: 152
-        height: 237
+        x: 435
+        y: 484
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,13 +208,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_6
+      name: idlefront_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 474
-        width: 152
-        height: 237
+        x: 522
+        y: 484
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,13 +222,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_7
+      name: idlefront_7
       rect:
         serializedVersion: 2
-        x: 152
-        y: 474
-        width: 152
-        height: 237
+        x: 609
+        y: 484
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,13 +236,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_8
+      name: idlefront_8
       rect:
         serializedVersion: 2
-        x: 304
-        y: 474
-        width: 152
-        height: 237
+        x: 696
+        y: 484
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,13 +250,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_9
+      name: idlefront_9
       rect:
         serializedVersion: 2
-        x: 456
-        y: 474
-        width: 152
-        height: 237
+        x: 783
+        y: 484
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,13 +264,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_10
+      name: idlefront_10
       rect:
         serializedVersion: 2
-        x: 608
-        y: 474
-        width: 152
-        height: 237
+        x: 870
+        y: 484
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,27 +278,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_11
-      rect:
-        serializedVersion: 2
-        x: 760
-        y: 474
-        width: 152
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: runback_12
+      name: idlefront_11
       rect:
         serializedVersion: 2
         x: 0
-        y: 237
-        width: 152
-        height: 237
+        y: 242
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,13 +292,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_13
+      name: idlefront_12
       rect:
         serializedVersion: 2
-        x: 152
-        y: 237
-        width: 152
-        height: 237
+        x: 87
+        y: 242
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,13 +306,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_14
+      name: idlefront_13
       rect:
         serializedVersion: 2
-        x: 304
-        y: 237
-        width: 152
-        height: 237
+        x: 174
+        y: 242
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,13 +320,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_15
+      name: idlefront_14
       rect:
         serializedVersion: 2
-        x: 456
-        y: 237
-        width: 152
-        height: 237
+        x: 261
+        y: 242
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,13 +334,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_16
+      name: idlefront_15
       rect:
         serializedVersion: 2
-        x: 608
-        y: 237
-        width: 152
-        height: 237
+        x: 348
+        y: 242
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,13 +348,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_17
+      name: idlefront_16
       rect:
         serializedVersion: 2
-        x: 760
-        y: 237
-        width: 152
-        height: 237
+        x: 435
+        y: 242
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,13 +362,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_18
+      name: idlefront_17
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 242
+        width: 87
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idlefront_18
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 242
+        width: 87
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idlefront_19
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 242
+        width: 87
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idlefront_20
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 242
+        width: 87
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idlefront_21
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 242
+        width: 87
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: idlefront_22
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 152
-        height: 237
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,69 +446,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: runback_19
+      name: idlefront_23
       rect:
         serializedVersion: 2
-        x: 152
+        x: 87
         y: 0
-        width: 152
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: runback_20
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 0
-        width: 152
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: runback_21
-      rect:
-        serializedVersion: 2
-        x: 456
-        y: 0
-        width: 152
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: runback_22
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 0
-        width: 152
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: runback_23
-      rect:
-        serializedVersion: 2
-        x: 760
-        y: 0
-        width: 152
-        height: 237
+        width: 87
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

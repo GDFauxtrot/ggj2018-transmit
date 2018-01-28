@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
     public int score;
     public int bossSpawnScore;
 
-    public GameObject health_pack;
+    public GameObject health_pack,PowerUp;
 
     public float spawnPointRange; // How far away can enemies spawn from the spawn points (spawning them exactly on would be boring)
 
@@ -251,6 +251,19 @@ public class GameManager : MonoBehaviour {
 
     private IEnumerator UpgradePlayerBullets() {
         bullet_up_bool = false;
+        bool found_spot = false;
+        Vector3 spot = Vector3.zero;
+        while (!found_spot)
+        {
+            yield return new WaitForSeconds(0.01f);
+            spot = new Vector3(player.transform.position.x + Random.Range(-5f, 5f), player.transform.position.y + 2 + Random.Range(-5f, 5f), 0);
+            RaycastHit2D rh = Physics2D.Raycast(spot, Vector2.down, 0f);
+
+            if (rh.collider)
+                if (rh.collider.CompareTag("Spawnable"))
+                    found_spot = true;
+        }
+        Instantiate(PowerUp, spot, Quaternion.identity);
         yield return new WaitForSeconds(bulletUpgradeTimer);
         bullet_up_bool = true;
     }

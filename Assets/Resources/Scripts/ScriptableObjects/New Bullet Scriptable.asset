@@ -20,6 +20,6 @@ MonoBehaviour:
   PlayerDamage: 3
   UpPlayerSpeed: 15
   UpPlayerDamage: 5
-  upgraded: 1
+  upgraded: 0
   EnemySpeed: 10
   EnemyDamage: 5
