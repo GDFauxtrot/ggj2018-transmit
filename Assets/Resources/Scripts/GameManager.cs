@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour {
                 break;
             case "lag":
                 StartCoroutine(LagEffect(lagEffectTime));
+                StartCoroutine(PixelEffect(2, lagEffectTime, 0.5f));
                 break;
         }
     }
@@ -127,7 +128,22 @@ public class GameManager : MonoBehaviour {
     }
 
     private IEnumerator LagEffect(float time) {
-        yield return new WaitForSeconds(0f); // need this here or else it complains
+        float currentTime = 0f;
+
+        while (currentTime < time) {
+            bool waitThisCycle = Random.Range(0, 60) == 0;
+
+            if (waitThisCycle) {
+                float wait = Random.Range(0.1f, 1f);
+                Time.timeScale = 0f;
+                yield return new WaitForSecondsRealtime(wait);
+                Time.timeScale = 1f;
+                currentTime += wait;
+            } else {
+                yield return new WaitForSeconds(Time.deltaTime);
+                currentTime += Time.deltaTime;
+            }
+        }
     }
 
     private IEnumerator PixelEffect(float intensity, float time, float fadeTime) {
@@ -138,14 +154,17 @@ public class GameManager : MonoBehaviour {
             yield return new WaitForSeconds(Time.deltaTime);
             timeStep += Time.deltaTime * (1f/fadeTime);
         }
+
         timeStep = 1f;
         inGameCameraManager.SetPixelEffectIntensity(intensity);
         yield return new WaitForSeconds(time);
+
         while (timeStep > 0f) {
             inGameCameraManager.SetPixelEffectIntensity(Mathf.Lerp(0f, intensity, timeStep));
             yield return new WaitForSeconds(Time.deltaTime);
             timeStep -= Time.deltaTime * (1f/fadeTime);
         }
+
         inGameCameraManager.SetPixelEffectIntensity(0f);
     }
 }
