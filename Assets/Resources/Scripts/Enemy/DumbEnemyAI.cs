@@ -97,6 +97,11 @@ public class DumbEnemyAI : MonoBehaviour {
             Instantiate(death_explosion, transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
+        else if(boss && enemyHealth <= 0)
+        {
+            StartCoroutine(transform.GetComponent<Boss_Shooting>().Death());
+            GetComponent<DumbEnemyAI>().enabled = false;
+        }
     }
 
     private IEnumerator Make_Sounds()
