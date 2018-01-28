@@ -63,12 +63,6 @@ public class bullet : MonoBehaviour {
 
             RET();
 		}
-		if(other.tag=="Untagged")
-		{
-            CancelInvoke();
-
-            RET();
-        }
 
 	}
 	

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: New Bullet Scriptable
   m_EditorClassIdentifier: 
   bulletTypes:
-  - {fileID: 21300000, guid: bc63326955716274d8957a163637bb7f, type: 3}
+  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 21300000, guid: cfbb173712865054ca060f9f251a18ea, type: 3}
+  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   PlayerSpeed: 10
   PlayerDamage: 1
   UpPlayerSpeed: 15
