@@ -128,7 +128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351d8b5b7d21973498ba6970e9cd085b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  playerSpeed: 10
+  enemyspeed: 3
+  playerDamage: 10
+  enemyDamage: 10
+  pool: {fileID: 0}
 --- !u!212 &212800928362661764
 SpriteRenderer:
   m_ObjectHideFlags: 1
