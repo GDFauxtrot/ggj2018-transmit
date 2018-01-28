@@ -602,6 +602,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!1 &642905066 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1890763450674164, guid: 41ca676b30f8789418cc54788cf8f98c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1254209575}
 --- !u!1 &707710263 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1078271564383688, guid: db9cebd8dc81d894fb9d493f4a12bb94,
@@ -727,7 +732,7 @@ Prefab:
     - target: {fileID: 198546055945330414, guid: 2c684e2bdfd45ed4fb8177701187534c,
         type: 2}
       propertyPath: randomSeed
-      value: -1684685157
+      value: -1000494450
       objectReference: {fileID: 0}
     - target: {fileID: 4665403806742482, guid: 2c684e2bdfd45ed4fb8177701187534c, type: 2}
       propertyPath: m_LocalPosition.y
@@ -888,6 +893,16 @@ Prefab:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198546055945330414, guid: 2c684e2bdfd45ed4fb8177701187534c,
+        type: 2}
+      propertyPath: autoRandomSeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114941515791856228, guid: 2c684e2bdfd45ed4fb8177701187534c,
+        type: 2}
+      propertyPath: game_over
+      value: 
+      objectReference: {fileID: 642905066}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c684e2bdfd45ed4fb8177701187534c, type: 2}
   m_IsPrefabParent: 0
@@ -1354,6 +1369,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114427916219805822, guid: 41ca676b30f8789418cc54788cf8f98c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224418595629454852, guid: 41ca676b30f8789418cc54788cf8f98c,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1476,9 +1496,54 @@ Prefab:
       propertyPath: randomChanceOfCommand
       value: 66
       objectReference: {fileID: 0}
+    - target: {fileID: 114427916219805822, guid: 41ca676b30f8789418cc54788cf8f98c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114427916219805822, guid: 41ca676b30f8789418cc54788cf8f98c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114427916219805822, guid: 41ca676b30f8789418cc54788cf8f98c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1254209577}
+    - target: {fileID: 114427916219805822, guid: 41ca676b30f8789418cc54788cf8f98c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: res
+      objectReference: {fileID: 0}
+    - target: {fileID: 114427916219805822, guid: 41ca676b30f8789418cc54788cf8f98c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1890763450674164, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1254209576 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1902193481989574, guid: 41ca676b30f8789418cc54788cf8f98c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1254209575}
+--- !u!114 &1254209577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1254209576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b626532b65e5980418960c36bc6b4f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1261895662 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1234618242970188, guid: db9cebd8dc81d894fb9d493f4a12bb94,
