@@ -102,6 +102,8 @@ public class Player : MonoBehaviour {
 
         float right_or_left = Input.GetAxis("RstickHorizontal");
         anim.SetFloat("SpeedMult", 1);
+        bool x_greater = Mathf.Abs(movement.x) > Mathf.Abs(movement.y);
+
         if (right_or_left != 0)
         {
             if (right_or_left < -0.2f)
@@ -117,13 +119,36 @@ public class Player : MonoBehaviour {
                 if (movement.x < 0)
                     anim.SetFloat("SpeedMult", -1);
             }
+
+            if (movement.x > 0)
+            {
+                if (x_greater)
+                    anim.SetInteger("Direction", 2);
+            }
+            else if (movement.x < 0)
+            {
+                if (x_greater)
+                    anim.SetInteger("Direction", 0);
+            }
         }
-        else
+        else if (movement != Vector2.zero)
         {
             if (movement.x > 0)
+            {
+                if (x_greater)
+                    anim.SetInteger("Direction", 2);
+                else
+                    anim.SetInteger("Direction", movement.y > 0 ? 1 : 3);
                 sr.flipX = false;
+            }
             else if (movement.x < 0)
+            {
+                if (x_greater)
+                    anim.SetInteger("Direction", 0);
+                else
+                    anim.SetInteger("Direction", movement.y > 0 ? 1 : 3);
                 sr.flipX = true;
+            }
         }
 
 
