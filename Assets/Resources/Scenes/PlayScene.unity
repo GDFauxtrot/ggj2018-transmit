@@ -433,6 +433,11 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 322922508}
+    - target: {fileID: 114134496025870500, guid: 41ca676b30f8789418cc54788cf8f98c,
+        type: 2}
+      propertyPath: level_step
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41ca676b30f8789418cc54788cf8f98c, type: 2}
   m_IsPrefabParent: 0
@@ -470,14 +475,29 @@ MonoBehaviour:
     type: 2}
   brawlerPrefab: {fileID: 1196136940699662, guid: e9ac5af2b9909bb41856727ababbb791,
     type: 2}
+  bossPrefab: {fileID: 0}
   bossSpawned: 0
-  score: 0
+  score: 5200000
   bossSpawnScore: 50000
   spawnPointRange: 0.25
   pixelEffectIntensity: 5
   pixelEffectTime: 5
   pixelEffectFadeTime: 1
   lagEffectTime: 5
+  spawnBrawlerTimer: 2
+  healTimer: 30
+  playerSpeedUpTimer: 20
+  enemiesDamageUpTimer: 20
+  streamQualityTimer: 10
+  spawnShooterTimer: 5
+  playerDoubleDamageTimer: 30
+  playerSpeedDownTimer: 20
+  enemySpeedDownTimer: 10
+  lagTimer: 20
+  bulletUpgradeTimer: 20
+  trapsTimer: 20
+  invincibleTimer: 40
+  bossTimer: 60
 --- !u!4 &322922509
 Transform:
   m_ObjectHideFlags: 0
