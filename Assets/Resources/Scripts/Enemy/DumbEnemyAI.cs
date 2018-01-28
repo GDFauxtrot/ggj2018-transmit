@@ -111,6 +111,7 @@ public class DumbEnemyAI : MonoBehaviour {
             yield return new WaitForSeconds(Random.Range(2f, 5f));
             audio_player.clip = sounds[Random.Range(0, sounds.Length)];
             audio_player.pitch = Random.Range(0.9f, 1.1f);
+            audio_player.volume = 0.8f;
             audio_player.Play();
         }
     }
