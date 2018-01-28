@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
     private Transform reticle;
 
     public BulletPoolScriptable poolapi;
+    public GameObject shoot_particles;
 
     public float cameraFollowStep;
 
@@ -31,6 +32,8 @@ public class Player : MonoBehaviour {
     void Update () {
         if (Input.GetButtonDown("Fire1")) {
             poolapi.request(reticle.position + (reticle.right), Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z),false);
+            shoot_particles.transform.rotation = Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z);
+            shoot_particles.GetComponent<ParticleSystem>().Play();
         }
     }
 
