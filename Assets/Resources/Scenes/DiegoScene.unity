@@ -330,11 +330,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 182512846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22dcb882b6392e34589da90482942c3e, type: 3}
+  m_Script: {fileID: 11500000, guid: bd6305920626fd74597eef6f89740154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPool: {fileID: 11400000, guid: c6cc333c805db0447a06eb1fa98a098c, type: 2}
-  numberOfShots: 3
 --- !u!1 &292047795
 GameObject:
   m_ObjectHideFlags: 0
