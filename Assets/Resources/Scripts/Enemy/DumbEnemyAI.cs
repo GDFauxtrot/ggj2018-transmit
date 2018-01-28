@@ -7,6 +7,7 @@ public class DumbEnemyAI : MonoBehaviour {
     private GameObject player;
     private Player playerScript;
     private Rigidbody2D enemyRB;
+    public GameObject death_explosion;
 
     public int enemyHealth = 3;
     [Tooltip("Determines how fast the enemy will move towards the player. Values: [0-1], 0 means no movement at all, and 1 means teleport to player.")]
@@ -48,6 +49,9 @@ public class DumbEnemyAI : MonoBehaviour {
     }
 
     private void checkIfDead() {
-        if (enemyHealth <= 0) { Destroy(this.gameObject); }
+        if (enemyHealth <= 0) {
+            Instantiate(death_explosion, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
     }
 }
