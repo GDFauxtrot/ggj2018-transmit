@@ -11,7 +11,7 @@ public class bullet : MonoBehaviour {
 
 
 	private float speed;
-	private float damage;
+	private int damage;
 
 
 	private Rigidbody2D rb2d;
@@ -45,7 +45,14 @@ public class bullet : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-	
+		if(tagTarget=="Enemy"&& other.tag=="Enemy")
+		{
+			other.GetComponent<DumbEnemyAI>().enemyHealth-=damage;
+			//if(bulletScript.upgraded)
+			//{
+
+			//}
+		}
 
 	}
 	

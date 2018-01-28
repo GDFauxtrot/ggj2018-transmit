@@ -7,6 +7,7 @@ using UnityEngine;
 public class bulletScriptable : ScriptableObject {
 
 
+	[Tooltip("0 is the default, 1 is upgraded, 2 is enemy")]
 	public List<Sprite> bulletTypes;
 
 
@@ -14,17 +15,16 @@ public class bulletScriptable : ScriptableObject {
 
 
 	public float PlayerSpeed;
-	public float PlayerDamage;
+	public int PlayerDamage;
 
     public float UpPlayerSpeed;
-    public float UpPlayerDamage;
+    public int UpPlayerDamage;
 
     public bool upgraded;
 
 
-	public Sprite EnemySprite;
 	public float EnemySpeed;
-	public float EnemyDamage;
+	public int EnemyDamage;
 
 	public void resetEverything()
 	{
