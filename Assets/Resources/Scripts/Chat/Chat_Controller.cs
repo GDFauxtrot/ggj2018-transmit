@@ -182,6 +182,15 @@ public class Chat_Controller : MonoBehaviour
             {
                 if (player_input.text.Length - 1 > 0)
                     Add_Message("<color=white>" + "Player2" + ": " + player_input.text.Substring(0, player_input.text.Length - 1) + "</color>", true);
+                for(int i = 0; i < commands.Length; ++i)
+                {
+                    if (player_input.text.Substring(0, player_input.text.Length - 1) == commands[i].message)
+                    {
+                        if(i <= current_max_command_index)
+                            gm.SendCommand(commands[i].function_name);
+                        break;
+                    }
+                }
                 player_input.text = "";
             }
             else if (player_input.text[player_input.text.Length - 1] == '\t')
