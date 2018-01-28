@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - SpawnPoint
+  - HealthPack
+  - Spawnable
   layers:
   - Default
   - TransparentFX
@@ -15,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Farther
+  - Background
   - 
   - 
   - 

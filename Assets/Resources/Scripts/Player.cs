@@ -29,7 +29,6 @@ public class Player : MonoBehaviour {
 
     void Awake() {
         anim = GetComponent<Animator>();
-        print(sr.gameObject);
         reticle = transform.GetChild(0).GetComponent<Transform>();
         rb2D = GetComponent<Rigidbody2D>();
         cameraFollow = transform.GetChild(1).gameObject;
@@ -57,7 +56,7 @@ public class Player : MonoBehaviour {
     }
 
     public void TakeDamage(int damage) {
-        if (isInvincible && damage < health)
+        if (isInvincible && damage < health && damage > 0)
             return;
 
         health -= damage;
@@ -65,13 +64,13 @@ public class Player : MonoBehaviour {
             // die function
         }
         health = Mathf.Clamp(health, 0, maxHealth);
-        StartCoroutine(IFrames());
+        if(damage > 0)
+            StartCoroutine(IFrames());
     }
 
     private IEnumerator IFrames()
     {
         isInvincible = true;
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
         for(int i = 0; i < 15; ++i)
         {
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.5f);

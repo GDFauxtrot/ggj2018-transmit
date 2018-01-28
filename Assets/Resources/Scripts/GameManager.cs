@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
     public int score;
     public int bossSpawnScore;
 
+    public GameObject health_pack;
+
     public float spawnPointRange; // How far away can enemies spawn from the spawn points (spawning them exactly on would be boring)
 
     public float pixelEffectIntensity, pixelEffectTime, pixelEffectFadeTime, lagEffectTime;
@@ -156,6 +158,12 @@ public class GameManager : MonoBehaviour {
             if (dontSpawnTogether) // flip this bool to put each one at a different spawn point
                 spawnPointIndex = Random.Range(0, enemySpawnPoints.Count);
 
+            if(!enemySpawnPoints[spawnPointIndex].GetComponent<SpawnPointIsOn>().isactive)
+            {
+                //Reset the loop as if it didnt happen (i.e. choose a new spawn)
+                --i;
+                continue;
+            }
             Vector2 spawnPos = enemySpawnPoints[spawnPointIndex].transform.position;
             prefab.transform.position = new Vector2(
                 spawnPos.x + Random.Range(-spawnPointRange, spawnPointRange),
@@ -185,6 +193,20 @@ public class GameManager : MonoBehaviour {
     private IEnumerator SpawnHealthPack()
     {
         heal_bool = false;
+        bool found_spot = false;
+        Vector3 spot = Vector3.zero;
+        while(!found_spot)
+        {
+            yield return new WaitForSeconds(0.01f);
+            spot = new Vector3(player.transform.position.x + Random.Range(-5f, 5f), player.transform.position.y + 2 + Random.Range(-5f, 5f), 0);
+            RaycastHit2D rh = Physics2D.Raycast(spot, Vector2.down, 0f);
+
+            print(rh.collider.name);
+            if (rh.collider)
+                if (rh.collider.CompareTag("Spawnable"))
+                    found_spot = true;
+        }
+        Instantiate(health_pack, spot, Quaternion.identity);
         yield return new WaitForSeconds(healTimer);
         heal_bool = true;
     }
