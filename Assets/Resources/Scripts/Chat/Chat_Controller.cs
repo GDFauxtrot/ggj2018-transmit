@@ -69,7 +69,7 @@ public class Chat_Controller : MonoBehaviour
     "<message deleted>", "Kappa123", "PogChamp", "BibleThump", "SourPls", "press f to pay respects", "F", "ggez", "Hello YouTube!", "EU > NA", "Kappa2020", "Meta!", "say my name plz", "Chat is going by so fast, no one will see I'm a weeb", "ResidentSleeper", "BabyRage", "<Has been timed out for 10 seconds>"};
     private string[] colors = new string[] { "aqua", "blue", "brown", "red", "yellow", "navy", "orange", "purple", "lime", "green", "magenta", "maroon" };
 
-    private int[] max_command_index = new int[] { 1, 3, 5, 8, 11, 12, 13 };
+    private int[] max_command_index = new int[] { 1, 2, 4, 7, 10, 11, 12 };
     int current_max_command_index = 1;
 
     //This is the value that represents how many points it takes to move into the next bracket of commands as shown above

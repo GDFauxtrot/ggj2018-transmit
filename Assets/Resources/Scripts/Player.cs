@@ -31,6 +31,7 @@ public class Player : MonoBehaviour {
     public GameObject game_over, eat;
 
     void Awake() {
+
         anim = GetComponent<Animator>();
         reticle = transform.GetChild(0).GetComponent<Transform>();
         rb2D = GetComponent<Rigidbody2D>();
@@ -83,6 +84,7 @@ public class Player : MonoBehaviour {
 
         health -= damage;
         if (health <= 0) {
+            Camera.main.GetComponent<AudioListener>().enabled = false;
             game_over.SetActive(true);
             Destroy(gameObject);
             // die function

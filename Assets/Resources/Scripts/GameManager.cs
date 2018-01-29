@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.DeleteAll();
         bs.upgraded = false;
         //For Testing Commands
-        PlayerPrefs.SetInt("Score", 100000);
+        //PlayerPrefs.SetInt("Score", 100000);
         inGameCameraManager = inGameCamera.GetComponent<InGameCameraManager>();
         enemySpawnPoints = new List<GameObject>();
         foreach (Transform childTransform in spawnPoints.transform) {
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour {
         switch (messageSplit[0]) {
             case "spawnraptor":
                 if(spawn_brawler_bool)
-                    StartCoroutine(SpawnEnemy(brawlerPrefab, 3, true));
+                    StartCoroutine(SpawnEnemy(brawlerPrefab, 3, spawnBrawlerTimer, true));
                 break;
             case "heal":
                 if (heal_bool)
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour {
                 break;
             case "spawnshooter":
                 if (spawn_shooter_bool)
-                    StartCoroutine(SpawnEnemy(shooterPrefab, 3, true));
+                    StartCoroutine(SpawnEnemy(shooterPrefab, 3, spawnShooterTimer, true));
                 break;
             case "playerdamup":
                 if (player_double_damage_bool)
@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour {
                 break;
             case "boss":
                 if (boss_bool)
-                    StartCoroutine(SpawnEnemy(bossPrefab, 1, false));
+                    StartCoroutine(SpawnEnemy(bossPrefab, 1, bossTimer, false));
                 break;
         }
     }
@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour {
 
     // Preferrably unless the different enemy types need different spawn behaviors,
     // just keep this as generic prefab spawn and pass in the enemy prefab you want
-    private IEnumerator SpawnEnemy(GameObject prefab, int count, bool dontSpawnTogether = false) {
+    private IEnumerator SpawnEnemy(GameObject prefab, int count, float wait , bool dontSpawnTogether = false) {
         spawn_brawler_bool = false;
         int spawnPointIndex = Random.Range(0, enemySpawnPoints.Count);
 
@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour {
                 spawnPos.y + Random.Range(-spawnPointRange, spawnPointRange));
             Instantiate(prefab);
         }
-        yield return new WaitForSeconds(spawnBrawlerTimer);
+        yield return new WaitForSeconds(wait);
         spawn_brawler_bool = true;
     }
     
