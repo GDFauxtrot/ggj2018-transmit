@@ -9,6 +9,7 @@ public class Health_Pack : MonoBehaviour {
         if(c.CompareTag("Player"))
         {
             c.GetComponent<Player>().TakeDamage(-10);
+            c.GetComponent<Player>().Munch();
             Destroy(gameObject);
         }
     }

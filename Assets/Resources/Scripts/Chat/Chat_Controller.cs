@@ -66,7 +66,7 @@ public class Chat_Controller : MonoBehaviour
         new CommandData("!LagPlayer", "lag"), new CommandData("!BulletUpgrade", "bulletup"), new CommandData("!SpawnTrap", "trap"), new CommandData("!Invincibility", "invince"), new CommandData("!SpawnBoss", "boss")};
 
     private string[] useless_messages = new string[] { "You Suck!", "Best Streamer Ever!", "I Love you", "uu n00b l0l", "I wish people respected you more", "I hate this game play something else", "I could play this so much better than you can", "reeeeeeeeeeeeee",
-    "<message deleted>"};
+    "<message deleted>", "Kappa123", "PogChamp", "BibleThump", "SourPls", "press f to pay respects", "F", "ggez", "Hello YouTube!", "EU > NA", "Kappa2020", "Meta!", "say my name plz", "Chat is going by so fast, no one will see I'm a weeb", "ResidentSleeper", "BabyRage", "<Has been timed out for 10 seconds>"};
     private string[] colors = new string[] { "aqua", "blue", "brown", "red", "yellow", "navy", "orange", "purple", "lime", "green", "magenta", "maroon" };
 
     private int[] max_command_index = new int[] { 1, 3, 5, 8, 11, 12, 13 };

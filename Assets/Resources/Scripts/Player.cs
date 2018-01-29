@@ -21,11 +21,14 @@ public class Player : MonoBehaviour {
 
     public float cameraFollowStep;
     private AudioSource shoot_sound;
+    public AudioSource hurt;
 
     GameObject cameraFollow;
 
     private Animator anim;
     public SpriteRenderer sr;
+
+    public GameObject game_over, eat;
 
     void Awake() {
         anim = GetComponent<Animator>();
@@ -38,10 +41,20 @@ public class Player : MonoBehaviour {
     void Update () {
         if (Input.GetButtonDown("Fire1")) {
             poolapi.request(shoot_particles.transform.position, Quaternion.Euler(0, 0, reticle.rotation.eulerAngles.z),"player");
-            if (sr.flipX)
+            if (anim.GetInteger("Direction") == 0)
             {
                 shoot_particles.transform.rotation = Quaternion.Euler(new Vector3(0, 180, -25f));
                 shoot_particles.transform.localPosition = new Vector3(-0.6f, 2.1f, 0);
+            }
+            else if(anim.GetInteger("Direction") == 1)
+            {
+                shoot_particles.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 65f));
+                shoot_particles.transform.localPosition = new Vector3(-0.1f, 2.5f, 0);
+            }
+            else if(anim.GetInteger("Direction") == 3)
+            {
+                shoot_particles.transform.rotation = Quaternion.Euler(new Vector3(180, 0, 65f));
+                shoot_particles.transform.localPosition = new Vector3(0.1f, 1.44f, 0);
             }
             else
             {
@@ -70,11 +83,16 @@ public class Player : MonoBehaviour {
 
         health -= damage;
         if (health <= 0) {
+            game_over.SetActive(true);
+            Destroy(gameObject);
             // die function
         }
         health = Mathf.Clamp(health, 0, maxHealth);
         if(damage > 0)
+        {
             StartCoroutine(IFrames());
+            hurt.Play();
+        }
     }
 
     private IEnumerator IFrames()
@@ -100,36 +118,75 @@ public class Player : MonoBehaviour {
             anim.SetBool("Running", false);
 
 
-        float right_or_left = Input.GetAxis("RstickHorizontal");
+        Vector2 rstick = new Vector2(Input.GetAxis("RstickHorizontal"), Input.GetAxis("RstickVertical"));
         anim.SetFloat("SpeedMult", 1);
         bool x_greater = Mathf.Abs(movement.x) > Mathf.Abs(movement.y);
+        bool rstick_x_greater = Mathf.Abs(rstick.x) > Mathf.Abs(rstick.y);
 
-        if (right_or_left != 0)
+        if (rstick != Vector2.zero)
         {
-            if (right_or_left < -0.2f)
+            //if (rstick.x < -0.2f)
+            //{
+            //    sr.flipX = true;
+            //    //Back Running
+            //    if (movement.x > 0 && rstick_x_greater)
+            //        anim.SetFloat("SpeedMult", -1);
+            //}
+            //else if (rstick.x > 0.2f)
+            //{
+            //    sr.flipX = false;
+            //    if (movement.x < 0)
+            //        anim.SetFloat("SpeedMult", -1);
+            //}
+
+            if(rstick_x_greater)
             {
-                sr.flipX = true;
-                //Back Running
-                if (movement.x > 0)
-                    anim.SetFloat("SpeedMult", -1);
+                if(rstick.x > 0.2f)
+                {
+                    sr.flipX = false;
+                    anim.SetInteger("Direction", 2);
+                    if (movement.x < 0 && x_greater)
+                        anim.SetFloat("SpeedMult", -1);
+                }
+                else if(rstick.x < -0.2f)
+                {
+                    sr.flipX = true;
+                    anim.SetInteger("Direction", 0);
+                    if (movement.x > 0 && x_greater)
+                        anim.SetFloat("SpeedMult", -1);
+                }
             }
-            else if (right_or_left > 0.2f)
+            else
             {
-                sr.flipX = false;
-                if (movement.x < 0)
-                    anim.SetFloat("SpeedMult", -1);
+                if(rstick.y > 0.2f)
+                {
+                    anim.SetInteger("Direction", 1);
+                    if (movement.y < 0 && !x_greater)
+                        anim.SetFloat("SpeedMult", -1);
+                }
+                else if(rstick.y < -0.2f)
+                {
+                    anim.SetInteger("Direction", 3);
+                    if (movement.y > 0 && !x_greater)
+                        anim.SetFloat("SpeedMult", -1);
+                }
             }
 
-            if (movement.x > 0)
-            {
-                if (x_greater)
-                    anim.SetInteger("Direction", 2);
-            }
-            else if (movement.x < 0)
-            {
-                if (x_greater)
-                    anim.SetInteger("Direction", 0);
-            }
+
+            //if(x_greater)
+            //{
+            //    if (movement.x > 0)
+            //            anim.SetInteger("Direction", 2);
+            //    else if (movement.x < 0)
+            //            anim.SetInteger("Direction", 0);
+            //}
+            //else
+            //{
+            //    if (movement.y > 0)
+            //        anim.SetInteger("Direction", 1);
+            //    else if (movement.y < 0)
+            //        anim.SetInteger("Direction", 3);
+            //}
         }
         else if (movement != Vector2.zero)
         {
@@ -148,6 +205,21 @@ public class Player : MonoBehaviour {
                 else
                     anim.SetInteger("Direction", movement.y > 0 ? 1 : 3);
                 sr.flipX = true;
+            }
+
+            if(x_greater)
+            {
+                if (movement.x > 0)
+                    reticle.eulerAngles = new Vector3(0, 0, 0);
+                else
+                    reticle.eulerAngles = new Vector3(0, 0, 180);
+            }
+            else
+            {
+                if(movement.y > 0)
+                    reticle.eulerAngles = new Vector3(0, 0, 90);
+                else
+                    reticle.eulerAngles = new Vector3(0, 0, 270);
             }
         }
 
@@ -171,5 +243,10 @@ public class Player : MonoBehaviour {
             Mathf.Lerp(cameraFollow.transform.localPosition.x, delta.x, cameraFollowStep),
             Mathf.Lerp(cameraFollow.transform.localPosition.y + 0.5f, delta.y, cameraFollowStep),
             cameraFollow.transform.position.z);
+    }
+
+    public void Munch()
+    {
+        eat.GetComponent<AudioSource>().Play();
     }
 }
